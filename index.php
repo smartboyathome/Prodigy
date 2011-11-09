@@ -47,7 +47,8 @@ if (!$db_select){
 <div id="container">
     
     <header id="header" class="frame">
-	    <h1 class="title">Prodigy</h1>
+        
+	    <h1 class="title"><img src="prodigylogo.png" width="200"></h1>
     </header>
 
     <nav id="nav" class="frame">
