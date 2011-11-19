@@ -139,11 +139,13 @@ class mysqlDAL{
     }
 }
 
+/*
 $prodigyDB = new mysqlDAL;
 
 foreach ($prodigyDB->getLesson(1) as $row){
     echo $row['name'] . "<br/>";
 }
+*/
 
 //$prodigyDB->addClass("Cajun Style Cooking", "Once you take this class, you'll be able to cook Southern favorites such as fried catfish like a pro!");
 
