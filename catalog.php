@@ -64,7 +64,7 @@ if (!$db_select){
     <div id="wrapper" class="frame">
     
 	    <div align="right" style="padding:15px; color: #437EA1; ">
-		<input type="text" name="search" /><a href=""> Search!</a>
+		<input type="text" align:right; name="search" /><a href=""> Search!</a>
 		
 	    </div>
 	
