@@ -42,6 +42,17 @@ body {
 	background: #F2F2F2; 
 }
 
+.catalog { background: none repeat scroll 0 0 #FFFFFF; border: 2px dotted #437EA1; border-radius: 4px 4px 4px 4px;
+	   color: #437EA1; margin: 30px ; padding: 7px 4px; border-width: 1px;}
+	.catalog .header { font-size: 18px; line-height:24px; }
+	.catalog .author { font-size: 11px; color: #888; }
+	.catalog .description {line-height: 18px; }
+	
+.classpage{ background: none repeat scroll 0 0 #FFFFFF; border: 2px solid #437EA1; margin: 30px; padding: 15px; color: #437EA1; height: inherit;}
+	.classpage .header{ font-size: 50px; line-height: 60px; font-weight: bold;}
+	.classpage .author{ font-size: 25px; line-height: 30px; font-style: italic;}
+	.classpage .description{ padding: 5px;  font-size: 20px;}
+	
 .frame { width: 960px; margin: 0 auto;  background: #FFF; }
 
 #container { width: 960px; margin: 0 auto; background: #FFF;
@@ -68,10 +79,6 @@ body {
 
 #wrapper { height: 500px; }
 
-.classDescription { width: 460px; height: 75px; margin: 10px; float: left; margin-bottom: 35px; }
-	.classDescription .header { font-size: 18px; line-height:24px; }
-	.classDescription .author { font-size: 11px; color: #888; }
-	.classDescription .description {line-height: 18px; }
 
 #footer {  height: 150px; border-top: 1px solid #DDD;}
 
