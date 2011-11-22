@@ -5,6 +5,7 @@
  *
  */
  
+
 class mysqlDAL{
 
     //************************************************************************************
@@ -80,13 +81,13 @@ class mysqlDAL{
     //getLessonList
     //retrieves a list of lessons from the database
     //
-    public function getLessonList(){
+    public function getLessonList($cID){
         global $db_host, $db_name, $db_user, $db_pass;
 
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $sql = "SELECT * FROM lesson";
+            $sql = "SELECT * FROM lesson WHERE classid='$cID'";
 
             return $dbh->query($sql);
 
