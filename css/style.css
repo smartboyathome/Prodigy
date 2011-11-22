@@ -25,7 +25,7 @@ ol, ul {
 
 /*----------------------------------*/
 
-a:link, a:visited, a:hover { color: #437EA1; text-decoration: none; }
+a:link, a:visited, a:hover { color: #4DA400; text-decoration: none; }
 
 /* Float Container */
 .flc { clear:both; }
@@ -38,9 +38,10 @@ a:link, a:visited, a:hover { color: #437EA1; text-decoration: none; }
 html > body .flc { height: auto; max-height: 120000px; }
 
 body { 
-	font: 12px/14px Arial, "Helvetica Neue", Helvetica, sans-serif;
-	background: #F2F2F2; 
+	font: 12px/14px Helvetica, Arial, "Helvetica Neue", sans-serif;
+	background: #FFFFFF; 
 }
+
 
 .catalog { background: none repeat scroll 0 0 #FFFFFF; border: 2px dotted #437EA1; border-radius: 4px 4px 4px 4px;
 	   color: #437EA1; margin: 30px ; padding: 7px 4px; border-width: 1px;}
@@ -55,10 +56,10 @@ body {
 	.classpage .list{}
 	.classpage .list li { font-size: 15px;}
 	
-.frame { width: 960px; margin: 0 auto;  background: #FFF; }
+.frame { width: 960px; margin: 0 auto;  background: #FFF; padding: 10px; }
+.grid { margin: auto 10px; }
 
-#container { width: 960px; margin: 0 auto; background: #FFF;
-	-moz-box-shadow: 0 0 5px #333; -webkit-box-shadow: 0 0 5px #333; box-shadow: 0 0 5px #333; }
+#container { width: 980px; margin: 0 auto; background: #FFF; }
 
 #login { width: auto; height: 35px; background: #437EA1; border-bottom: 1px solid #000; position: relative; z-index: 100;}
 	#login #loginBar { background: #437EA1; border: none; line-height: 35px; text-align: right; }
@@ -71,18 +72,43 @@ body {
 	
 #test { border-bottom: 1px solid #FFF; position: relative; }
 
-#header { height: 100px; border-top: 0; }
-	#header .title { font: 48px/100px "Arial Black"; padding-left: 20px; }
+#header { height: 75px; margin-top: 20px; border-top: 0; }
+	#header .title {}
 
-#nav { height: 40px; border-top: 1px solid #DDD; border-bottom: 1px solid #DDD; font-size: 13px; font-weight: bold; margin-bottom: 20px;}
-	#nav .list {}
-	#nav .list li { line-height: 40px; float: left; border-right: 1px solid #DDD; }
-	#nav .list li a { padding: 0 25px; display: block; }
+#nav ul { margin-bottom: 20px; width: 980px; }
+	#nav .list {height: 35px; ; border: 1px solid #1E1E1E; background: url('/images/nav_bg.png'); }
+	#nav .list li { line-height: 35px; float: left; }
+	#nav .list li.search { float: right; margin-right: 15px; }
+	#nav .list li input { padding: 3px 5px; color: #BBB; width: 200px;
+		-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+	#nav .list li a { background: url('/images/nav.png'); background-position: 0 0; color: #F4F4F4; display: block; letter-spacing: 0.3px; line-height: 35px; text-align: center; text-shadow: 0 1px 0 #252525; width: 118px; }
+	#nav .list li a:hover { background-position: 0 -35px; }
+	#nav .list li a:active { background-position: 0 -70px; }
+	
+#wrapper { height: auto; padding: 10px; background: url('/images/content-bg.png'); margin-bottom: 20px; border-bottom: 1px solid #DDD; }
 
-#wrapper { height: 500px; }
+#mainColumn { width: 595px; height: auto; background: #FFF; padding: 20px; float: left; border: 1px solid #DDD; margin-right: 20px; }
+	#mainColumn .header { font-size: 28px;  letter-spacing: -1px; line-height: 36px; color: #444; padding-bottom: 5px; margin-bottom: 20px; border-bottom: 1px solid #ccc;}
+	#mainColumn .classDescription { padding: 20px 10px; border-bottom: 1px dotted #CCC;}
+	#mainColumn .classDescription:hover { cursor: pointer; background: #F0F0F0; }
+	#mainColumn .classDescription .imageContainer { float: left; margin-right: 20px; }
+	#mainColumn .classDescription .image { width: 100px; height: 100px; }
+	#mainColumn .classDescription .title { font-size: 22px; line-height: 24px; color: #4DA400; }
+	#mainColumn .classDescription .smallPrint { font-size: 11px; line-height: 18px; color: #888; }
+	#mainColumn .classDescription .smallPrint span { font-weight: bold; color: #777;}
+	#mainColumn .classDescription .description { font-size: 14px; line-height: 18px; color: #555; }
+	
+#secondaryColumn { width: 260px; height: 500px; padding: 20px; background: #FFF; float: left; border: 1px solid #DDD; }
+	#secondaryColumn .header { font-size: 28px;  letter-spacing: -1px; line-height: 36px; color: #444; padding-bottom: 5px; margin-bottom: 20px; border-bottom: 1px solid #ccc;  }
+	#secondaryColumn .list { margin-top: -20px; }
+	#secondaryColumn .list li a { padding-left: 10px; display: block; font-size: 12px; line-height: 30px; border-bottom: 1px dotted #CCC; }
+	#secondaryColumn .list li a:hover { background: #F0F0F0; }
+		
+#footer { height: 150px; border: 1px solid #DDD; margin-bottom: 20px; }
 
-
-#footer {  height: 150px; border-top: 1px solid #DDD;}
+#wrapper, #mainColumn, #secondaryColumn, #nav .list, #footer {
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
+}
 
 
 
