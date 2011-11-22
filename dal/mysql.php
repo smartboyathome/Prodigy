@@ -4,8 +4,7 @@
  * MySQL Database Abstraction Layer
  *
  */
-require_once("../conf.php");
-
+ 
 class mysqlDAL{
 
     //************************************************************************************
