@@ -38,11 +38,11 @@ a:link, a:visited, a:hover { color: #4DA400; text-decoration: none; }
 html > body .flc { height: auto; max-height: 120000px; }
 
 body { 
-	font: 12px/14px Helvetica, Arial, "Helvetica Neue", sans-serif;
+	font: 14px/18px Helvetica, Arial, "Helvetica Neue", sans-serif;
 	background: #FFFFFF; 
 }
 
-
+.fr { float: right;  display; inline; }
 .catalog { background: none repeat scroll 0 0 #FFFFFF; border: 2px dotted #437EA1; border-radius: 4px 4px 4px 4px;
 	   color: #437EA1; margin: 30px ; padding: 7px 4px; border-width: 1px;}
 	.catalog .header { font-size: 18px; line-height:24px; color:#4DA400;}
@@ -111,8 +111,7 @@ body {
 	.classDescription .smallPrint span { font-weight: bold; color: #777;}
 	.classDescription .description { font-size: 14px; line-height: 18px; color: #555; }
 
-#classDetails {}
- 	.smallPrint { font-size: 11px; line-height: 18px; color: #888; margin-bottom: 10px; }
+ 	.smallPrint { font-size: 11px; line-height: 18px; color: #888; }
  	.smallPrint span { font-weight: bold; color: #777; }
 		
 #footer { height: 150px; border: 1px solid #DDD; margin-bottom: 20px; }
@@ -126,6 +125,60 @@ body {
 
 
 
+
+
+
+
+
+
+
+.button {
+	background: #90ee90; /* Old browsers */
+	background: -moz-linear-gradient(top, #90ee90 0%, #4da400 100%, #4da400 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#90ee90), color-stop(100%,#4da400), color-stop(100%,#4da400)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* IE10+ */
+	background: linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90ee90', endColorstr='#4da400',GradientType=0 );
+    border: 1px solid #4DA400;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 20px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline;
+    font-size: 14px;
+    line-height: 40px;
+    margin-bottom: 5px;
+    padding: 12px 20px;
+}
+
+.buttonSmall {
+	background: -moz-linear-gradient(top, #90ee90 0%, #4da400 100%, #4da400 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#90ee90), color-stop(100%,#4da400), color-stop(100%,#4da400)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* IE10+ */
+	background: linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90ee90', endColorstr='#4da400',GradientType=0 );
+    border: 1px solid #4DA400;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 15px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline;
+    margin-bottom: 5px;
+    padding: 6px 15px;
+}
+
+.button:hover, .buttonInput:hover, .buttonSmall:hover {
+    background: none repeat scroll 0 0 #4DA400;
+    box-shadow: 0 20px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;
+    position: relative;
+    text-decoration: none;
+    top: 1px;
+}
 
 
 
