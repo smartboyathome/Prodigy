@@ -77,6 +77,8 @@ body {
 	
 .header { font-size: 28px;  letter-spacing: -1px; line-height: 36px; color: #444; padding-bottom: 5px; margin-bottom: 20px; border-bottom: 1px solid #ccc;  }
 
+.module { margin-bottom: 20px; }
+
 #nav ul { margin-bottom: 20px; width: 980px; }
 	#nav .list {height: 35px; ; border: 1px solid #1E1E1E; background: url('../images/nav_bg.png'); }
 	#nav .list li { line-height: 35px; float: left; }
@@ -109,6 +111,9 @@ body {
 	.classDescription .smallPrint span { font-weight: bold; color: #777;}
 	.classDescription .description { font-size: 14px; line-height: 18px; color: #555; }
 
+#classDetails {}
+ 	.smallPrint { font-size: 11px; line-height: 18px; color: #888; margin-bottom: 10px; }
+ 	.smallPrint span { font-weight: bold; color: #777; }
 		
 #footer { height: 150px; border: 1px solid #DDD; margin-bottom: 20px; }
 
