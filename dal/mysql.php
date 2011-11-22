@@ -87,7 +87,7 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $sql = "SELECT * FROM lesson WHERE classid='$cID'";
+            $sql = "SELECT * FROM lesson WHERE classid='$cID' ORDER BY lessonNum ASC";
 
             return $dbh->query($sql);
 
