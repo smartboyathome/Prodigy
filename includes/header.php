@@ -21,8 +21,8 @@ if (!$db_select){
 
 <head>
     <title>Prodigy | Shared Learning System</title>
-    <link rel="Icon Name" href="/images/favicon.png">
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="Icon Name" href="images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta name="description" content="" />
 </head>
 
@@ -32,7 +32,7 @@ if (!$db_select){
     
     <header id="header" class="frame">
         
-	    <h1 class="title"><img src="/images/ProdigyLogo.png"></h1>
+	    <h1 class="title"><img src="images/ProdigyLogo.png"></h1>
     </header>
 
     <nav id="nav">

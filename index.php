@@ -7,7 +7,7 @@
             <h2 class="header">Popular Classes</h2>
             
             <section class="classDescription" style="margin-top: -20px;">
-        	    <div class="imageContainer"><img class="image" src="/images/astronomy.jpg" alt="universe" /></div>
+        	    <div class="imageContainer"><img class="image" src="images/astronomy.jpg" alt="universe" /></div>
         	    <h3 class="title">Astronomy 101</h3>
         	    <div class="smallPrint"><span>67 Enrolled</span> | Created: December 31st 1969 4:33 PM</div>
         	    <div class="description">Introduction to the universe, with emphasis on conceptual, as contrasted with mathematical, comprehension. Modern theories, observations; ideas concerning nature, evolution of galaxies; quasars, stars, black holes, planets, solar system. </div>
