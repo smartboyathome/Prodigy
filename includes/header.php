@@ -39,7 +39,7 @@ if (!$db_select){
     	<ul class="list">
     	    <li><a href="">Home</a></li>
     	    <li><a href="">Browse</a></li>
-    	    <li><a href="">Categories</a></li>
+    	    <li><a href="">My Classes</a></li>
     	    <li><a href="">Account</a></li>
     	    <li class="search"><input type="text" name="search" value="search"/></li>
     	</ul>
