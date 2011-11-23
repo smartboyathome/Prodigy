@@ -38,7 +38,7 @@ if (!$db_select){
     <nav id="nav">
     	<ul class="list">
     	    <li><a href="index.php">Home</a></li>
-    	    <li><a href="">Browse</a></li>
+    	    <li><a href="index.php?module=viewcatalog">Browse</a></li>
     	    <li><a href="">My Classes</a></li>
     	    <li><a href="">Account</a></li>
     	    <li class="search"><input type="text" name="search" value="search"/></li>

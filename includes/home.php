@@ -6,7 +6,7 @@
     
 	$prodigyDB = new mysqlDAL;
 
-	foreach ($prodigyDB->getClassList() as $row){
+	foreach ($prodigyDB->getPopularClassList() as $row){
 
 	echo("
 

@@ -18,6 +18,8 @@
                 include 'includes/viewclass.php';
             }elseif ($mod == 'viewlesson'){
                 include 'includes/viewlesson.php';
+            }elseif ($mod == 'viewcatalog'){
+                include 'includes/viewcatalog.php';
             }else{
                 include 'includes/home.php';
             }

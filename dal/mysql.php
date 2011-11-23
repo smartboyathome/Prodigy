@@ -59,7 +59,7 @@ class mysqlDAL{
 
     //************************************************************************************
     //getClassList
-    //retrieves a list of classes from the database
+    //retrieves a list of all classes from the database
     //
     public function getClassList(){
         global $db_host, $db_name, $db_user, $db_pass;
@@ -67,7 +67,7 @@ class mysqlDAL{
     	try {
     		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-    		$sql = "SELECT * FROM class";
+    		$sql = "SELECT * FROM class ORDER BY name ASC";
 
     		return $dbh->query($sql);
 
@@ -75,6 +75,27 @@ class mysqlDAL{
     	}catch(PDOException $e){
     		echo $e->getMessage();
     	}
+    }
+
+
+    //************************************************************************************
+    //getPopularClassList
+    //retrieves a list of the 3 most popular classes from the database
+    //
+    public function getPopularClassList(){
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $sql = "SELECT * FROM class ORDER BY enrolledCnt DESC LIMIT 3";
+
+            return $dbh->query($sql);
+
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
 
     //************************************************************************************
