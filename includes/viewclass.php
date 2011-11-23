@@ -8,6 +8,8 @@ function showBrief($str, $length) {
   return implode(" " , array_slice($str, 0, $length));
 }
 
+echo("<div id='mainColumn'>");
+
 foreach ($prodigyDB->getClass($_GET["classid"]) as $row){
 
  echo("<div class='module flc'>
@@ -35,7 +37,6 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
 
 	echo("          <article class='classDescription'>
                     <h4 class='title'><a href='index.php?module=viewlesson&lessonid=".$row2['lessonID']."'>".$row2['lessonNum'].") ".$row2['name']."</a></h4>
-                    <div class='smallPrint'>Modified On: 12/12/12</div>
                     <div class='smallPrint'>".$preview."...</div>
                     </article>");
 }
@@ -43,4 +44,14 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
 ?>
 
 </div>
-    
+</div>
+
+        <div id="secondaryColumn">
+            <h4 class="header">What You'll Learn</h4>
+            <ul class="list">
+                <li><a href="">Astrobiology</a></li>
+                <li><a href="">Life in the Universe</a></li>
+                <li><a href="">Origin of Life</a></li>
+                <li><a href="">Exploring the Moon</a></li>
+            </ul>
+        </div>

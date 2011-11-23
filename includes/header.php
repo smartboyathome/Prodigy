@@ -32,7 +32,7 @@ if (!$db_select){
     
     <header id="header" class="frame">
         
-	    <h1 class="title"><img src="images/ProdigyLogo.png"></h1>
+	    <h1 class="title"><a href='index.php'><img src="images/ProdigyLogo.png"></a></h1>
     </header>
 
     <nav id="nav">
