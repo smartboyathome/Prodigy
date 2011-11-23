@@ -27,14 +27,16 @@
 </div>
 
         <div id="secondaryColumn">
-            <h4 class="header">Subjects</h4>
-            <ul class="list">
-                <li><a href="">Astronomy</a></li>
-                <li><a href="">Biology</a></li>
-                <li><a href="">Business</a></li>
-                <li><a href="">Chemistry</a></li>
-                <li><a href="">Computer Science</a></li>
-                <li><a href="">Economics</a></li>
-                <li><a href="">Education</a></li>
-            </ul>
+            <div class="container" style="height: 460px;">
+                <h4 class="header">Subjects</h4>
+                <ul class="list">
+                    <li><a href="">Astronomy</a></li>
+                    <li><a href="">Biology</a></li>
+                    <li><a href="">Business</a></li>
+                    <li><a href="">Chemistry</a></li>
+                    <li><a href="">Computer Science</a></li>
+                    <li><a href="">Economics</a></li>
+                    <li><a href="">Education</a></li>
+                </ul>
+            </div>
         </div>

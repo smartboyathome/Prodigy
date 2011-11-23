@@ -46,12 +46,25 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
 </div>
 </div>
 
-        <div id="secondaryColumn">
-            <h4 class="header">What You'll Learn</h4>
-            <ul class="list">
-                <li><a href="">Astrobiology</a></li>
-                <li><a href="">Life in the Universe</a></li>
-                <li><a href="">Origin of Life</a></li>
-                <li><a href="">Exploring the Moon</a></li>
-            </ul>
-        </div>
+<div id="secondaryColumn">
+    <div class="container module">
+        <h4 class="header">What You'll Learn</h4>
+        <ul class="list">
+            <li><a href="">Astrobiology</a></li>
+            <li><a href="">Life in the Universe</a></li>
+            <li><a href="">Origin of Life</a></li>
+            <li><a href="">Exploring the Moon</a></li>
+        </ul>
+    </div>
+    
+    <div class="container module">
+        <h4 class="header">Quizzes</h4>
+        <ul class="list">
+            <li><a href="">On Astrobiology</a></li>
+            <li><a href="">On Life in the Universe</a></li>
+            <li><a href="">On Origin of Life</a></li>
+            <li><a href="">On Exploring the Moon</a></li>
+        </ul>
+    </div>
+</div>
+

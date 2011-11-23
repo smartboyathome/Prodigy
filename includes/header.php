@@ -13,8 +13,9 @@
 <div id="container">
     
     <header id="header" class="frame">
-        
-	    <h1 class="title"><a href='index.php'><img src="images/ProdigyLogo.png"></a></h1>
+        <div id="logo">
+            <img src="images/ProdigyLogo.png"></a></h1>
+        </div>
     </header>
 
     <nav id="nav">

@@ -43,44 +43,22 @@ body {
 }
 
 .fr { float: right;  display; inline; }
-.catalog { background: none repeat scroll 0 0 #FFFFFF; border: 2px dotted #437EA1; border-radius: 4px 4px 4px 4px;
-	   color: #437EA1; margin: 30px ; padding: 7px 4px; border-width: 1px;}
-	.catalog .header { font-size: 18px; line-height:24px; color:#4DA400;}
-	.catalog .author { font-size: 11px; color: #888; }
-	.catalog .description {line-height: 18px; }
-	
-.classpage{ background: none repeat scroll 0 0 #FFFFFF; border: 2px solid #1E1E1E; border-radius:10px; margin: 30px; padding: 15px; color: #1E1E1E; height: 350px;}
-	.classpage .header{ font-size: 50px; line-height: 60px; font-weight: bold; color: #4DA400;}
-	.classpage .author{ font-size: 25px; line-height: 30px; font-style: italic;}
-	.classpage .description{ border: 2px dotted #1E1E1E; border-radius: 5px; padding: 5px 5px 30px ;  font-size: 15px; }
-	.classpage .list{}
-	.classpage .list li { font-size: 15px;}
 	
 .frame { width: 960px; margin: 0 auto;  background: #FFF; padding: 10px; overflow: hidden;}
+
 .grid { margin: auto 10px; }
 
 #container { width: 980px; margin: 0 auto; background: #FFF; }
 
-#login { width: auto; height: 35px; background: #437EA1; border-bottom: 1px solid #000; position: relative; z-index: 100;}
-	#login #loginBar { background: #437EA1; border: none; line-height: 35px; text-align: right; }
-	#login #loginBar .list li input { color: #AAA; padding: 5px; border: none;
-		-moz-border-radius: 3px; }
-	#login #loginBar .list {}
-	#login #loginBar .list li { color: #FFF; float: right; padding: 0 5px; }
-	#login #loginBar .list li a { display: block; color: #FFF; }
-	#login #loginBar .list li a:hover { text-decoration: underline; }
-	
-#test { border-bottom: 1px solid #FFF; position: relative; }
-
-#header { height: 75px; margin-top: 20px; border-top: 0; }
-	#header .title {}
-	
-.header { font-size: 28px;  letter-spacing: -1px; line-height: 36px; color: #444; padding-bottom: 5px; margin-bottom: 20px; border-bottom: 1px solid #ccc;  }
+#header { height: 75px; margin-top: 20px; border-top: 0;}
+	#header #logo { height: 75px; width: 250px; }
+	#header #logo:hover { background: url('../images/home.png') no-repeat right center; }
+.header { font-size: 28px; letter-spacing: -1px; line-height: 36px; color: #444; padding-bottom: 5px; border-bottom: 1px solid #ccc;  }
 
 .module { margin-bottom: 20px; }
 
 #nav ul { margin-bottom: 20px; width: 980px; }
-	#nav .list {height: 35px; ; border: 1px solid #1E1E1E; background: url('../images/nav_bg.png'); }
+	#nav .list { height: 35px; border: 1px solid #1E1E1E; background: url('../images/nav_bg.png'); }
 	#nav .list li { line-height: 35px; float: left; }
 	#nav .list li.search { float: right; margin-right: 15px; }
 	#nav .list li input { padding: 3px 5px; color: #BBB; width: 200px;
@@ -89,12 +67,18 @@ body {
 	#nav .list li a:hover { background-position: 0 -35px; }
 	#nav .list li a:active { background-position: 0 -70px; }
 	
+#subNav ul { width: 980px; background: #F7F7F7; margin: -10px 0 10px 0; border-color: #E3E3E3; border-style: solid solid none; border-width: 1px 1px medium; line-height: 35px;
+			-moz-border-radius: 6px; }
+		#subNav li { padding: 0 10px; }
+	
 #wrapper { height: auto; padding: 10px; background: url('../images/content-bg.png'); margin-bottom: 20px; border-bottom: 1px solid #DDD; }
 
-#mainColumn { width: 595px; height: auto; background: #FFF; padding: 20px; float: left; border: 1px solid #DDD; margin-right: 20px; }	#mainColumn .classDescription { padding: 20px 10px; border-bottom: 1px dotted #CCC;}
+#mainColumn { width: 595px; height: auto; background: #FFF; padding: 20px; float: left; border: 1px solid #DDD; margin-right: 20px; }	
+	#mainColumn .classDescription { padding: 20px 10px; border-bottom: 1px dotted #CCC;}
 	
-#secondaryColumn { width: 260px; height: 500px; padding: 20px; background: #FFF; float: left; border: 1px solid #DDD; }
-	#secondaryColumn .list { margin-top: -20px; }
+#secondaryColumn { width: 300px; float: left;  }
+	#secondaryColumn .container { width: 260px; padding: 20px; background: #FFF; border: 1px solid #DDD;}
+	#secondaryColumn .list { }
 	#secondaryColumn .list li a { padding-left: 10px; display: block; font-size: 12px; line-height: 30px; border-bottom: 1px dotted #CCC; }
 	#secondaryColumn .list li a:hover { background: #F0F0F0; }
 	
@@ -107,32 +91,27 @@ body {
 	.classDescription .imageContainer { float: left; margin-right: 20px; }
 	.classDescription .image { width: 100px; height: 100px; }
 	.classDescription .title { font-size: 22px; line-height: 24px; color: #4DA400; }
-	.classDescription .smallPrint { font-size: 11px; line-height: 18px; color: #888; }
+	.classDescription .smallPrint { font-size: 11px; line-height: 18px; color: #888; margin-bottom: 5px; }
 	.classDescription .smallPrint span { font-weight: bold; color: #777;}
 	.classDescription .description { font-size: 14px; line-height: 18px; color: #555; }
 
- 	.smallPrint { font-size: 11px; line-height: 18px; color: #888; }
+ 	.smallPrint { font-size: 11px; line-height: 18px; color: #888; margin-top: 10px; }
  	.smallPrint span { font-weight: bold; color: #777; }
 		
 #footer { height: 150px; border: 1px solid #DDD; margin-bottom: 20px; }
+	#footer .list { width: 150px; margin: 20px 10px 0 10px; float: left; }
+	#footer .list .title { color: #555; letter-spacing: 0.3; font-size: 14px; line-height: 28px; }
+	#footer .list li a { color: #888; font-size: 12px; }
+	#footer .list li a:hover { color: #333; }
 
 .classContainer { width: 1000px; overflow: hidden; }
 
-#wrapper, #mainColumn, #secondaryColumn, #nav .list, #footer, .oneColumn {
+#wrapper, #mainColumn, #secondaryColumn .container, #nav .list, #footer, .oneColumn {
 	-moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
 }
 
-
-
-
-
-
-
-
-
-
-
 .button {
+	border: 1px solid #4DA400; border-radius: 3px; box-shadow: 0 20px 0 rgba(255, 255, 255, 0.1) inset; color: #FFF; cursor: pointer; display: inline; font-size: 14px; line-height: 40px; margin-bottom: 5px; padding: 12px 20px;
 	background: #90ee90; /* Old browsers */
 	background: -moz-linear-gradient(top, #90ee90 0%, #4da400 100%, #4da400 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#90ee90), color-stop(100%,#4da400), color-stop(100%,#4da400)); /* Chrome,Safari4+ */
@@ -141,19 +120,9 @@ body {
 	background: -ms-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* IE10+ */
 	background: linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90ee90', endColorstr='#4da400',GradientType=0 );
-    border: 1px solid #4DA400;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 20px 0 rgba(255, 255, 255, 0.1) inset;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline;
-    font-size: 14px;
-    line-height: 40px;
-    margin-bottom: 5px;
-    padding: 12px 20px;
 }
 
-.buttonSmall {
+.buttonSmall { border: 1px solid #4DA400; border-radius: 3px; box-shadow: 0 15px 0 rgba(255, 255, 255, 0.1) inset; color: #FFF; cursor: pointer; display: inline; margin-bottom: 5px; padding: 6px 15px;
 	background: -moz-linear-gradient(top, #90ee90 0%, #4da400 100%, #4da400 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#90ee90), color-stop(100%,#4da400), color-stop(100%,#4da400)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* Chrome10+,Safari5.1+ */
@@ -161,24 +130,9 @@ body {
 	background: -ms-linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* IE10+ */
 	background: linear-gradient(top, #90ee90 0%,#4da400 100%,#4da400 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90ee90', endColorstr='#4da400',GradientType=0 );
-    border: 1px solid #4DA400;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 15px 0 rgba(255, 255, 255, 0.1) inset;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline;
-    margin-bottom: 5px;
-    padding: 6px 15px;
 }
 
-.button:hover, .buttonInput:hover, .buttonSmall:hover {
-    background: none repeat scroll 0 0 #4DA400;
-    box-shadow: 0 20px 0 rgba(255, 255, 255, 0.1) inset;
-    color: #FFFFFF;
-    position: relative;
-    text-decoration: none;
-    top: 1px;
-}
+.button:hover, .buttonInput:hover, .buttonSmall:hover { background: #4DA400; box-shadow: 0 20px 0 rgba(255, 255, 255, 0.1) inset; color: #FFF; position: relative; text-decoration: none; top: 1px; }
 
 
 

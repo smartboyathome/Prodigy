@@ -2,8 +2,7 @@
 
 	$prodigyDB = new mysqlDAL;
 
-	echo("<div id='wrapper' class='frame flc'>       
-	 <div class='oneColumn'>
+	echo("<div class='oneColumn'>
             <section class='classContainer'>
                 <div class='header'>Browse Classes</div>");
 
@@ -17,7 +16,7 @@
     echo date('F jS Y \a\t g:i A', $row[createdDate]);
 
 
-	echo("</div>
+	echo("
             	    <div class='description'><p>".$row['description']."</p></div>
                 </article>");
 	}
