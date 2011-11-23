@@ -1,21 +1,3 @@
-<?php
-
-//initial connection to the MySQL server
-$connection = mysql_connect("localhost", "prodigy", "huskies");
-
-if (!$connection){
-	die("Database connection error.");
-}
-
-
-//connects to the Prodigy database 
-$db_select = mysql_select_db("prodigy", $connection);
-
-if (!$db_select){
-	die ("Error selecting database.");
-}
-
-?>
 
 <!DOCTYPE HTML>
 
