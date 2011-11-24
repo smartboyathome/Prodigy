@@ -22,22 +22,22 @@ foreach ($prodigyDB->getClass($_GET["classid"]) as $row){
                 <div class='description'>".$row['description']."
                 </div>
                 
-                <div class='fr'>
+                <div class='fr' style='margin-top:15px;'>
                     <a class='button'>Enroll Now</a>
                 </div>
             </div>");
 }
 
 echo("            <div class='module'>
-                <h3 class='header' style='margin-bottom: 0;'>Lessons</h3>");
+                <h3 class='header'>Lessons</h3>");
 
 foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
 
     $preview = showBrief($row2['content'], 75);
 
 	echo("          <article class='classDescription'>
-                    <h4 class='title'><a href='index.php?module=viewlesson&lessonid=".$row2['lessonID']."'>".$row2['lessonNum'].") ".$row2['name']."</a></h4>
-                    <div class='smallPrint'>".$preview."...</div>
+                    <h4 class='title' style='margin-bottom: 15px;'><a href='index.php?module=viewlesson&lessonid=".$row2['lessonID']."'>".$row2['lessonNum'].") ".$row2['name']."</a></h4>
+                    <div class='description'>".$preview."...</div>
                     </article>");
 }
 
