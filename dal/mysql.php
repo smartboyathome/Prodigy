@@ -175,6 +175,27 @@ class mysqlDAL{
         }
     }
 
+
+    //************************************************************************************
+    //getPopularClassList
+    //retrieves a list of the 3 most popular classes from the database
+    //
+    public function getPopularClassList(){
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $sql = "SELECT * FROM class ORDER BY enrolledCnt DESC LIMIT 3";
+
+            return $dbh->query($sql);
+
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
     //************************************************************************************
     //getLessonList
     //retrieves a list of lessons from the database
