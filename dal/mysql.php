@@ -63,13 +63,17 @@ class mysqlDAL{
 	public function userExists($username)
 	{
         global $db_host, $db_name, $db_user, $db_pass;
-		
-		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+        try {
+            
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-		$sql = "SELECT * FROM users WHERE username='$username'";
-		$result = $dbh->query($sql);
-		
-		return $result->columnCount() != 0;
+            $sql = "SELECT * FROM users WHERE username='$username'";
+            $result = $dbh->query($sql);
+            
+            return $result->columnCount() != 0;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
 	}
 	
 	//************************************************************************************
@@ -79,16 +83,20 @@ class mysqlDAL{
 	public function enrollUserInClass($username, $classid)
 	{
         global $db_host, $db_name, $db_user, $db_pass;
-		
-		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-		
-		if(!$this->userIsEnrolledInClass($username, $classid)
-		{
-			$sql = "INSERT INTO enrollment(username, classid) VALUES('$username', $classid)";
-			$result = $dbh->exec($sql);
-		}
-		
-		$dbh = NULL;
+        try {
+            
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+            
+            if(!$this->userIsEnrolledInClass($username, $classid))
+            {
+                $sql = "INSERT INTO enrollment(username, classid) VALUES('$username', $classid)";
+                $result = $dbh->exec($sql);
+            }
+            
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
 	}
 	
 	//************************************************************************************
@@ -98,13 +106,17 @@ class mysqlDAL{
 	public function userIsEnrolledInClass($username, $classid)
 	{
         global $db_host, $db_name, $db_user, $db_pass;
-		
-		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+        try {
+            
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-		$sql = "SELECT * FROM enrollment WHERE username='$username' AND classid=$classid";
-		$result = $dbh->query($sql);
-		
-		return $result->columnCount() == 0;
+            $sql = "SELECT * FROM enrollment WHERE username='$username' AND classid=$classid";
+            $result = $dbh->query($sql);
+            
+            return $result->columnCount() != 0 && $this->userExists($username) && $this->classExists($classid);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
 	}
 	
 	//************************************************************************************
@@ -113,14 +125,18 @@ class mysqlDAL{
 	//
 	public function numUsersEnrolledInClass($classid)
 	{
-		global $db_host, $db_name, $db_user, $db_pass;
-		
-		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+        global $db_host, $db_name, $db_user, $db_pass;
+        try {
+            
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-		$sql = "SELECT * FROM enrollment WHERE classid=$classid";
-		$result = $dbh->query($sql);
-		
-		return $result->columnCount();
+            $sql = "SELECT * FROM enrollment WHERE classid=$classid";
+            $result = $dbh->query($sql);
+            
+            return $result->columnCount();
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
 	}
 	
 	//************************************************************************************
@@ -129,14 +145,17 @@ class mysqlDAL{
 	//
 	public function numClassesUserEnrolledIn($classid)
 	{
-		global $db_host, $db_name, $db_user, $db_pass;
-		
-		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+        global $db_host, $db_name, $db_user, $db_pass;
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-		$sql = "SELECT * FROM enrollment WHERE username='$username'";
-		$result = $dbh->query($sql);
-		
-		return $result->columnCount();
+            $sql = "SELECT * FROM enrollment WHERE username='$username'";
+            $result = $dbh->query($sql);
+            
+            return $result->columnCount();
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
 	}
     
     //************************************************************************************
@@ -146,16 +165,20 @@ class mysqlDAL{
     public function unenrollUserInClass($username, $classid)
     {
         global $db_host, $db_name, $db_user, $db_pass;
-		
-		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-		
-		if(!$this->userIsEnrolledInClass($username, $classid)
-		{
-			$sql = "DELETE FROM enrollment WHERE username='$username' AND classid=$classid)";
-			$result = $dbh->exec($sql);
-		}
-		
-		$dbh = NULL;
+        try {
+            
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+            
+            if($this->userIsEnrolledInClass($username, $classid))
+            {
+                $sql = "DELETE FROM enrollment WHERE username='$username' AND classid=$classid)";
+                $result = $dbh->exec($sql);
+            }
+            
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
 
     //************************************************************************************
@@ -302,6 +325,27 @@ class mysqlDAL{
             $sql = "SELECT * FROM lesson WHERE lessonID='$lID'";
 
             return $dbh->query($sql);
+
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+    
+    //************************************************************************************
+    //classExists
+    //Checks whether the specified class exists
+    //
+    public function classExists($classId)
+    {
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $sql = "SELECT * FROM lesson WHERE classID='$classID'";
+
+            return $dbh->query($sql)->columnCount() != 0;
 
             $dbh = NULL;
         }catch(PDOException $e){
