@@ -1,21 +1,3 @@
-<?php
-
-//initial connection to the MySQL server
-$connection = mysql_connect("localhost", "prodigy", "huskies");
-
-if (!$connection){
-	die("Database connection error.");
-}
-
-
-//connects to the Prodigy database 
-$db_select = mysql_select_db("prodigy", $connection);
-
-if (!$db_select){
-	die ("Error selecting database.");
-}
-
-?>
 
 <!DOCTYPE HTML>
 
@@ -31,14 +13,15 @@ if (!$db_select){
 <div id="container">
     
     <header id="header" class="frame">
-        
-	    <h1 class="title"><img src="images/ProdigyLogo.png"></h1>
+        <div id="logo">
+            <a href="/"><img src="images/ProdigyLogo.png"></a></h1>
+        </div>
     </header>
 
     <nav id="nav">
     	<ul class="list">
     	    <li><a href="index.php">Home</a></li>
-    	    <li><a href="">Browse</a></li>
+    	    <li><a href="index.php?module=viewcatalog">Browse</a></li>
     	    <li><a href="">My Classes</a></li>
     	    <li><a href="">Account</a></li>
     	    <li class="search"><input type="text" name="search" value="search"/></li>
