@@ -69,7 +69,6 @@ class mysqlDAL{
 		$sql = "SELECT * FROM users WHERE username='$username'";
 		$result = $dbh->query($sql);
 		
-		//return $result != false;
 		return $result->columnCount() != 0;
 	}
 	
@@ -83,8 +82,11 @@ class mysqlDAL{
 		
 		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 		
-		$sql = "INSERT INTO enrollment(username, classid) VALUES('$username', $classid)";
-		$result = $dbh->exec($sql);
+		if(!$this->userIsEnrolledInClass($username, $classid)
+		{
+			$sql = "INSERT INTO enrollment(username, classid) VALUES('$username', $classid)";
+			$result = $dbh->exec($sql);
+		}
 		
 		$dbh = NULL;
 	}
@@ -102,9 +104,59 @@ class mysqlDAL{
 		$sql = "SELECT * FROM enrollment WHERE username='$username' AND classid=$classid";
 		$result = $dbh->query($sql);
 		
-		//return $result != false;
 		return $result->columnCount() == 0;
 	}
+	
+	//************************************************************************************
+	//numUsersEnrolledInClass
+	//The number of users enrolled in the specified class
+	//
+	public function numUsersEnrolledInClass($classid)
+	{
+		global $db_host, $db_name, $db_user, $db_pass;
+		
+		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+		$sql = "SELECT * FROM enrollment WHERE classid=$classid";
+		$result = $dbh->query($sql);
+		
+		return $result->columnCount();
+	}
+	
+	//************************************************************************************
+	//numClassesUserEnrolledIn
+	//The number of classes the specified user is enrolled in
+	//
+	public function numClassesUserEnrolledIn($classid)
+	{
+		global $db_host, $db_name, $db_user, $db_pass;
+		
+		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+		$sql = "SELECT * FROM enrollment WHERE username='$username'";
+		$result = $dbh->query($sql);
+		
+		return $result->columnCount();
+	}
+    
+    //************************************************************************************
+    //unenrollUserInClass
+    //Unenrolls the user in the specified class
+    //
+    public function unenrollUserInClass($username, $classid)
+    {
+        global $db_host, $db_name, $db_user, $db_pass;
+		
+		$dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+		
+		if(!$this->userIsEnrolledInClass($username, $classid)
+		{
+			$sql = "DELETE FROM enrollment WHERE username='$username' AND classid=$classid)";
+			$result = $dbh->exec($sql);
+		}
+		
+		$dbh = NULL;
+    }
 
     //************************************************************************************
     //addClass
