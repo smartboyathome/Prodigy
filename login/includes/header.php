@@ -6,6 +6,14 @@
     <link rel="Icon Name" href="images/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta name="description" content="" />
+    <script type="text/javascript" src="css/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".classDescription").on("click", function() {
+                document.location.href = $(this).data("link");
+            });
+        });
+    </script>
 </head>
 
 <body>
