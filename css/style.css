@@ -57,10 +57,16 @@ body {
 
 .module { margin-bottom: 20px; }
 
+.register{border-radius: 5px 5px 5px 5px;
+    padding: 5px 5px;
+    width: 200px;}
+
+
+
 #nav ul { margin-bottom: 20px; width: 980px; }
 	#nav .list { height: 35px; border: 1px solid #1E1E1E; background: url('../images/nav_bg.png'); }
 	#nav .list li { line-height: 35px; float: left; }
-	#nav .list li.search { float: right; margin-right: 15px; }
+	#nav .list li.search { float: right; margin-right: 15px; width: 150px;}
 	#nav .list li input { padding: 3px 5px; color: #BBB; width: 200px;
 		-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
 	#nav .list li a { background: url('../images/nav.png'); background-position: 0 0; color: #F4F4F4; display: block; letter-spacing: 0.3px; line-height: 35px; text-align: center; text-shadow: 0 1px 0 #252525; width: 118px; }
@@ -133,8 +139,6 @@ body {
 }
 
 .button:hover, .buttonInput:hover, .buttonSmall:hover { background: #4DA400; box-shadow: 0 20px 0 rgba(255, 255, 255, 0.1) inset; color: #FFF; position: relative; text-decoration: none; top: 1px; }
-
-
 
 
 

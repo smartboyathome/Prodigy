@@ -23,7 +23,10 @@
     	    <li><a href="index.php">Home</a></li>
     	    <li><a href="index.php?module=viewcatalog">Browse</a></li>
     	    <li><a href="">My Classes</a></li>
-    	    <li><a href="">Account</a></li>
-    	    <li class="search"><input type="text" name="search" value="search"/></li>
+	    <li><a href="/register.php">Sign Up</a></li>
+    	    <li><?php include_once 'login.php'; ?></li>
+	    
+	    
+	    
     	</ul>
     </nav>

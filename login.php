@@ -21,17 +21,17 @@
     }
     else
     {
-        include_once "includes/header.php"; 
+    
         
         if($_COOKIE['Username'] == "") {?>
-        Login:<br />
+        
         <form action="login.php" method="POST">
-            <label for="Username">Username: </label><input type="text" name="Username" /><br />
-            <label for="Password">Password: </label><input type="password" name="Password" /><br />
-            <input type="submit" name="Submit" value="Submit" />
+            <input type="text" name="Username" value="User" style="width: 125px; margin-left: 125px;"/>
+            <input type="password" name="Password" value="Pass" style="width: 125px;" />
+            <input type="submit" name="Submit" value="Login" style="width: 95px; color: black; height: 25px; padding-top: 0px; " />
         </form>
         
         <?php } else echo "Already logged in"; 
-        include_once "includes/footer.php";
+        
     }
 ?>
