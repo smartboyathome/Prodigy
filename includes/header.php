@@ -6,6 +6,14 @@
     <link rel="Icon Name" href="images/favicon.png">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta name="description" content="" />
+    <script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".classDescription").on("click", function() {
+                document.location.href = $(this).data("link");
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -23,7 +31,7 @@
     	    <li><a href="index.php">Home</a></li>
     	    <li><a href="index.php?module=viewcatalog">Browse</a></li>
     	    <li><a href="">My Classes</a></li>
-	    <li><a href="/register.php">Sign Up</a></li>
+	    <li><a href="register.php">Sign Up</a></li>
     	    <li><?php include_once 'login.php'; ?></li>
 	    
 	    
