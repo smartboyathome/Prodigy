@@ -1,5 +1,5 @@
 <?php
-    if(!empty($_COOKIE['Username']) && !empty($_POST['ClassId']))
+    if(!empty($_COOKIE['Username']) && !empty($_GET['ClassId']))
     {
         $db = new mysqlDAL;
         $db->enrollUserInClass($_COOKIE['Username'], $_POST['ClassId']);
