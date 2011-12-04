@@ -26,6 +26,7 @@ ol, ul {
 /*----------------------------------*/
 
 a:link, a:visited, a:hover { color: #4DA400; text-decoration: none; }
+a.button { color: #FFF; }
 
 /* Float Container */
 .flc { clear:both; }
@@ -92,6 +93,18 @@ body {
 .oneColumn {  width: 915px; height: auto; background: #FFF; padding: 20px; float: left; border: 1px solid #DDD; overflow: hidden;}
 		.oneColumn .header { width: 920px; }
 		.oneColumn .classDescription { width: 430px; height: 125px; float: left; margin: 0 20px 0 0;}
+		
+.loginContainer { width: auto; height: auto; float: left; color: #555; }
+	.loginContainer .header { font-size: 24px; width: auto; border: none; margin-bottom: 10px; }
+	.loginContainer .info { margin-bottom: 10px; font-size: 12px;}
+	
+.login {}
+	.login .loginInfo { line-height: 36px; }
+	.login .form { margin-left: 50px; }
+	.login .smallPrint { font-size: 12px; }
+	
+.error { color: #F00; font-size: 11px; display: inline;}
+
 		
 .classDescription { border-bottom: 1px dotted #DDD; padding: 20px 10px; }
 	.classDescription:hover { cursor: pointer; background: #F0F0F0; }
