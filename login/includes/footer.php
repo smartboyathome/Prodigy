@@ -27,4 +27,13 @@
 </div>
 
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".classDescription").on("click", function() {
+            document.location.href = $(this).data("link");
+        });
+    });
+</script>
+
 </html>

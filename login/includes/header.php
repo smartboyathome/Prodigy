@@ -7,13 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta name="description" content="" />
     <script type="text/javascript" src="css/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".classDescription").on("click", function() {
-                document.location.href = $(this).data("link");
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -25,7 +18,15 @@
             <a href="/"><img src="images/ProdigyLogo.png"></a></h1>
         </div>
     </header>
-
+    
+    <!--
+    <?php if($session->logged_in) {?>
+    <div class="welcomeMessage">
+        <? echo "Welcome, <b>$session->username</b>" ?>
+    </div>
+    <? } ?>
+    -->
+    
     <nav id="nav">
     	<ul class="list">
     	    <li><a href="index.php">Home</a></li>

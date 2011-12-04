@@ -1,3 +1,4 @@
+<?php include_once 'includes/header.php'; ?>
 <?
 /**
  * ForgotPass.php
@@ -18,10 +19,6 @@
  */
 include("include/session.php");
 ?>
-
-<html>
-<title>Jpmaster77's Login Script</title>
-<body>
 
 <?
 /**
@@ -59,21 +56,26 @@ else{
  * it is displayed.
  */
 ?>
-
-<h1>Forgot Password</h1>
-A new password will be generated for you and sent to the email address<br>
-associated with your account, all you have to do is enter your
-username.<br><br>
-<? echo $form->error("user"); ?>
-<form action="process.php" method="POST">
-<b>Username:</b> <input type="text" name="user" maxlength="30" value="<? echo $form->value("user"); ?>">
-<input type="hidden" name="subforgot" value="1">
-<input type="submit" value="Get New Password">
-</form>
-
+<div id="wrapper" class="frame flc">
+    <div class="oneColumn">
+    
+        <h2 class="header">Forgot Password</h2>
+        <p class="module" style="margin-top: 15px;">
+        A new password will be generated for you and sent to the email address<br>
+        associated with your account, all you have to do is enter your
+        username.</p>
+        
+        <? echo $form->error("user"); ?>
+        <form action="process.php" method="POST">
+            Username: <input type="text" name="user" maxlength="30" style="margin-left: 50px; width: 200px;" value="<? echo $form->value("user"); ?>">
+            <input type="hidden" name="subforgot" value="1">
+            <input type="submit" style="display: block; margin: 15px 0 0 240px;" value="Get Password">
+        </form>
+        
+    </div>
+</div>
 <?
 }
 ?>
 
-</body>
-</html>
+<?php include_once 'includes/footer.php'; ?>

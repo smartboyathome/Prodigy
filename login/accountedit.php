@@ -6,7 +6,7 @@
         <div class="oneColumn">
             <section class="classContainer">
                 <div class="header">Edit Account</div>
-		    <div >
+		            <div class="module" style="margin-top: 15px;">
 		
                                              <?
                   /**
@@ -16,7 +16,6 @@
                   if(isset($_SESSION['useredit'])){
                      unset($_SESSION['useredit']);
                      
-                     echo "<h1>User Account Edit Success!</h1>";
                      echo "<p><b>$session->username</b>, your account has been successfully updated. "
                          ."<a href=\"account.php\">Main</a>.</p>";
                   }
@@ -32,15 +31,14 @@
                    */
                   if($session->logged_in){
                   ?>
-                  
-                  <h1>User Account Edit : <? echo $session->username; ?></h1>
+                 
                   <?
                   if($form->num_errors > 0){
                      echo "<td><font size=\"2\" color=\"#ff0000\">".$form->num_errors." error(s) found</font></td>";
                   }
                   ?>
                   <form action="process.php" method="POST">
-                  <table align="left" border="0" cellspacing="0" cellpadding="3">
+                  <table class="editAccount" align="left" border="0" cellspacing="0" cellpadding="3">
                   <tr>
                   <td>Current Password:</td>
                   <td><input type="password" name="curpass" maxlength="30" value=""></td>
@@ -60,7 +58,7 @@
                   </tr>
                   <tr><td colspan="2" align="right">
                   <input type="hidden" name="subedit" value="1">
-                  <input type="submit" value="Edit Account"></td></tr>
+                  <input type="submit" style="width: 100px" value="Edit Account"></td></tr>
                   <tr><td colspan="2" align="left"></td></tr>
                   </table>
                   </form>

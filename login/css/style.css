@@ -40,6 +40,7 @@ html > body .flc { height: auto; max-height: 120000px; }
 
 body { 
 	font: 14px/18px Helvetica, Arial, "Helvetica Neue", sans-serif;
+	color: #555;
 	background: #FFFFFF; 
 }
 
@@ -105,6 +106,13 @@ body {
 	
 .error { color: #F00; font-size: 11px; display: inline;}
 
+.welcomeMessage { text-align: right; }
+
+.userData { width: 100px; display: inline; }
+
+.editAccount td { width: 200px; line-height: 36px; }
+.editAccount td:first-child { width: 150px; }
+.editAccount td input { width: 200px; }
 		
 .classDescription { border-bottom: 1px dotted #DDD; padding: 20px 10px; }
 	.classDescription:hover { cursor: pointer; background: #F0F0F0; }
