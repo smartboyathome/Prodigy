@@ -196,7 +196,45 @@ class mysqlDAL{
             $dbh->exec("INSERT INTO class(name, description, createdDate)
                 VALUES ('$name', '$description', '$createdDate')");
 
-            echo ("Added class ".$name);
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+    }
+
+    //************************************************************************************
+    //deleteClass
+    //drop a class from the database
+    //
+    public function deleteClass($cid){
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $dbh->exec("DELETE FROM class WHERE classID='$cid'");
+
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+    }
+
+    //************************************************************************************
+    //editClass
+    //edit a class from the database
+    //
+    public function editClass($cid, $cname, $cdesc){
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $createdDate = time();
+
+            $dbh->exec("UPDATE class SET name=$cname, description=$cdesc, lastModDate=$createdDate WHERE classID='$cid'");
 
             $dbh = NULL;
         }catch(PDOException $e){
@@ -221,7 +259,46 @@ class mysqlDAL{
             $dbh->exec("INSERT INTO lesson(classID, lessonNum, name, description, content)
                 VALUES ('$classID', '$lessonNum', $name', '$description', '$content')");
 
-            echo ("Added lesson ".$name);
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+    }
+
+
+    //************************************************************************************
+    //deleteLesson
+    //drop a lesson from the database
+    //
+    public function deleteLesson($lid){
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $dbh->exec("DELETE FROM lesson WHERE lessonID='$lid'");
+
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+
+    }
+
+    //************************************************************************************
+    //editLesson
+    //edit a lesson from the database
+    //
+    public function editLesson($lid, $lname, $lcont){
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $createdDate = time();
+
+            $dbh->exec("UPDATE lesson SET name=$lname, content=$lcont WHERE lessonID='$lid'");
 
             $dbh = NULL;
         }catch(PDOException $e){

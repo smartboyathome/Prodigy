@@ -24,4 +24,4 @@
     
     </div> <!--#wrapper -->
 
-<?php 'includes/footer.php'; ?>
+<?php include_once 'includes/footer.php'; ?>
