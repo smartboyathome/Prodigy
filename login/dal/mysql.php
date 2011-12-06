@@ -420,7 +420,28 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $sql = "SELECT * FROM lesson WHERE classID='$classID'";
+            $sql = "SELECT * FROM class WHERE classID='$classID'";
+
+            return $dbh->query($sql)->columnCount() != 0;
+
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+    
+    //************************************************************************************
+    //lessonExists
+    //Checks whether the specified lesson number exists
+    //
+    public function lessonExists($classId, $lessonNum)
+    {
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $sql = "SELECT * FROM lesson WHERE classID=$classID AND lessonNum=$lessonNum";
 
             return $dbh->query($sql)->columnCount() != 0;
 
