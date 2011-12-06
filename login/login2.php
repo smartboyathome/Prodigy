@@ -25,9 +25,10 @@
                                  * If errors occurred, they will be displayed.
                                  */
                                 if($form->num_errors > 0){
-                                   echo "<font size=\"2\" color=\"#ff0000\">".$form->num_errors." error(s) found</font>";
+				    $aler = "Incorrect Username or Password, Please Try Again!";
+				    echo "<script type='text/javascript'>alert('$aler')</script>";
                                 }
-                                ?>
+				?>
                                 <? echo "<li><a href=\"register.php\">Sign Up</a></li>"; ?>
                                 <li><form action="process.php" method="POST">
                                          <input type="text" name="user" value="User" style="width: 125px; margin-left: 125px;"/>
