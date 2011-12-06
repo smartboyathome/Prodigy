@@ -25,6 +25,7 @@
                       echo "[<a href=\"admin.php\">Admin Center</a>] &nbsp;&nbsp;";
                    }
                    echo "[<a href=\"process.php\">Logout</a>]";
+		   echo "<br><br><div class=\"header\"> Enrolled Classes</div>";
                 }
                 else{
                 ?>
