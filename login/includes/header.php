@@ -32,8 +32,7 @@
     	    <li><a href="index.php">Home</a></li>
     	    <li><a href="index.php?module=viewcatalog">Browse</a></li>
     	    <li><a href="">My Classes</a></li>
-	    <li><a href="register.php">Sign Up</a></li>
-    	    <li><?php include_once 'login.php'; ?></li>
+    	    <?php include_once 'login2.php'; ?>
 	    
 	    
 	    

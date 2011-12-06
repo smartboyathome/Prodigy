@@ -1,5 +1,5 @@
 <?php include_once 'includes/header.php'; ?>
-<? include("include/session.php"); ?>
+<? include_once("include/session.php"); ?>
 
     <div id="wrapper" class="frame flc">
     
