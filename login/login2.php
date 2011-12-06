@@ -9,7 +9,7 @@
                                  */
                                 if($session->logged_in){
                                   
-                                   echo "<li><a href=\"userinfo.php?user=$session->username\">My Account</a> </li>";
+                                   echo "<li><a href=\"account.php\">My Account</a> </li>";
                                        
                                    if($session->isAdmin()){
                                       echo "<li><a href=\"admin.php\">Admin Center</a></li>";
@@ -31,7 +31,7 @@
 				?>
                                 <? echo "<li><a href=\"register.php\">Sign Up</a></li>"; ?>
                                 <li><form action="process.php" method="POST">
-                                         <input type="text" name="user" value="User" style="width: 125px; margin-left: 125px;" onclick='this.value = "";' />
+                                         <input type="text" name="user" value="User" style="width: 125px; margin-left: 240px;" onclick='this.value = "";' />
                                         <input type="password" name="pass" value="Pass" style="width: 125px;" onclick='this.value = "";' />
                                         <input type="hidden" name="sublogin" value="1">
                                         <input type="submit" name="submit" value="Login" style="width: 95px; color: black; height: 25px; padding-top: 0px; " />
