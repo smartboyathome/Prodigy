@@ -31,8 +31,8 @@
 				?>
                                 <? echo "<li><a href=\"register.php\">Sign Up</a></li>"; ?>
                                 <li><form action="process.php" method="POST">
-                                         <input type="text" name="user" value="User" style="width: 125px; margin-left: 125px;"/>
-                                        <input type="password" name="pass" value="Pass" style="width: 125px;" />
+                                         <input type="text" name="user" value="User" style="width: 125px; margin-left: 125px;" onclick='this.value = "";' />
+                                        <input type="password" name="pass" value="Pass" style="width: 125px;" onclick='this.value = "";' />
                                         <input type="hidden" name="sublogin" value="1">
                                         <input type="submit" name="submit" value="Login" style="width: 95px; color: black; height: 25px; padding-top: 0px; " />
                                </form></li>

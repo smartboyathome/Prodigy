@@ -37,14 +37,14 @@
                     <p class="loginInfo">
                         Username:
                         <span class="form">
-                        <input type="text" name="user" maxlength="30" style="width: 200px;" value="<? echo $form->value("user"); ?>"> <span class="error"><? echo $form->error("user"); ?></p>
+                        <input type="text" name="user" maxlength="30" onclick='this.value = "";'  style="width: 200px;" value="<? echo $form->value("user"); ?>"> <span class="error"><? echo $form->error("user"); ?></p>
                         <span>
                     </p>
                 
                     <p class="loginInfo">
                         Password:
                         <span class="form" style="margin-left: 53px;">
-                        <input type="password" name="pass" maxlength="30" style="width: 200px;" value="<? echo $form->value("pass"); ?>"> <span class="error"><? echo $form->error("pass"); ?>
+                        <input type="password" name="pass" maxlength="30" onclick='this.value = "";'  style="width: 200px;" value="<? echo $form->value("pass"); ?>"> <span class="error"><? echo $form->error("pass"); ?>
                         </span>
                     </p>
                 
