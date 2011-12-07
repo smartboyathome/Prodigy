@@ -11,7 +11,7 @@
  * Written by: Jpmaster77 a.k.a. The Grandmaster of C++ (GMC)
  * Last Updated: August 26, 2004
  */
-include("../include/session.php");
+include_once("../include/session.php");
 
 /**
  * displayUsers - Displays the users database table in
