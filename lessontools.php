@@ -43,7 +43,7 @@ foreach ($prodigyDB->getClass($classID) as $row){
 		        <table class="tableCreateClass">
 		            <tr>
 	                    <td>Lesson Name:</td>
-	                    <td> <input type="text" name="name" value="<?php 
+	                    <td> <input type="text" size="35" name="name" value="<?php 
 
                         if(!empty($name)) echo $name; ?>" /></td>
 	                <tr>
