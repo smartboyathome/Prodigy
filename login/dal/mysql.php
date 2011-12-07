@@ -193,8 +193,12 @@ class mysqlDAL{
 
             $createdDate = time();
 
+            $fName = str_replace("'", "&#039;", $name);
+
+            $fDesc = str_replace("'", "&#039;", $description);
+
             $dbh->exec("INSERT INTO class(name, description, createdDate)
-                VALUES ('$name', '$description', '$createdDate')");
+                VALUES ('$fName', '$fDesc', '$createdDate')");
 
             $dbh = NULL;
         }catch(PDOException $e){
@@ -234,7 +238,11 @@ class mysqlDAL{
 
             $createdDate = time();
 
-            $dbh->exec("UPDATE class SET name='$cname', description='$cdesc', lastModDate='$createdDate' WHERE classID='$cid'");
+            $fName = str_replace("'", "&#039;", $cname);
+
+            $fDesc = str_replace("'", "&#039;", $cdesc);
+
+            $dbh->exec("UPDATE class SET name='$fName', description='$fDesc', lastModDate='$createdDate' WHERE classID='$cid'");
 
             $dbh = NULL;
         }catch(PDOException $e){
@@ -254,8 +262,12 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
+            $fName = str_replace("'", "&#039;", $name);
+
+            $fCont = str_replace("'", "&#039;", $content);
+
             $dbh->exec("INSERT INTO lesson(classID, lessonNum, name, content)
-                VALUES ('$classID', '$lessonNum', '$name', '$content')");
+                VALUES ('$classID', '$lessonNum', '$fName', '$fCont')");
 
             $dbh = NULL;
         }catch(PDOException $e){
@@ -294,8 +306,11 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
+            $fName = str_replace("'", "&#039;", $lname);
 
-            $dbh->exec("UPDATE lesson SET name='$lname', lessonNum='$lessonNum', content='$lcont' WHERE lessonID='$lid'");
+            $fCont = str_replace("'", "&#039;", $lcont);
+
+            $dbh->exec("UPDATE lesson SET name='$fName', lessonNum='$lessonNum', content='$fCont' WHERE lessonID='$lid'");
 
             $dbh = NULL;
         }catch(PDOException $e){
