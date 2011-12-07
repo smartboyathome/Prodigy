@@ -32,11 +32,5 @@ foreach ($prodigyDB->getLessonList($row2['classID']) as $row3){
             
             </ul>
             </div>
-            
-            <div class="container">
-                <h4 class="header">Test Your Knowledge</h4>
-                <ul class="list">
-                    <li><a href="">Take The Quiz</a></li>
-            </div>
-                
+
         </div>

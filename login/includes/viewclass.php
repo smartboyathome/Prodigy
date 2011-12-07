@@ -50,10 +50,13 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
     <div class="container module">
         <h4 class="header">What You'll Learn</h4>
         <ul class="list">
-            <li><a href="">Astrobiology</a></li>
-            <li><a href="">Life in the Universe</a></li>
-            <li><a href="">Origin of Life</a></li>
-            <li><a href="">Exploring the Moon</a></li>
+            <?php
+            
+            foreach ($prodigyDB->getLessonList($row2['classID']) as $row3){
+            	echo("<li><a href='index.php?module=viewlesson&lessonid=".$row3['lessonID']."'>".$row3['lessonNum'].") ".$row3['name']."</a></li>");
+            }
+            
+            ?>
         </ul>
     </div>
     
