@@ -62,7 +62,7 @@ class mysqlDAL{
 	//
 	public function userExists($username)
 	{
-        global $db_host, $db_name, $db_user, $db_pass;
+        /*global $db_host, $db_name, $db_user, $db_pass;
         try {
             
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
@@ -73,7 +73,12 @@ class mysqlDAL{
             return $result->columnCount() != 0;
         }catch(PDOException $e){
             echo $e->getMessage();
-        }
+        }*/
+	include_once "include/session.php";
+	include_once "include/database.php";
+	
+	$db = new MySQLDB;
+	return $db->confirmUserID($session->username, $session->userid);
 	}
 	
 	//************************************************************************************

@@ -22,9 +22,14 @@ foreach ($prodigyDB->getClass($_GET["classid"]) as $row){
                 <div class='description'>".$row['description']."
                 </div>
                 
-                <div class='fr' style='margin-top:15px;'>
-                    <a class='button'>Enroll Now</a>
-                </div>
+                <div class='fr' style='margin-top:15px;'>");
+		    if ($prodigyDB->userisEnrolledInClass($session->username, $_GET["classid"])){
+		      echo("<a class='button' href='unenroll.php?ClassId=".$_GET['classid']."'>Unenroll</a>");
+		    }
+		    else{
+		      echo("<a class='button' href='enroll.php?ClassId=".$_GET['classid']."'>Enroll Now</a>");
+		    }
+               echo(" </div>
             </div>");
 }
 
@@ -50,21 +55,16 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
     <div class="container module">
         <h4 class="header">What You'll Learn</h4>
         <ul class="list">
-            <li><a href="">Astrobiology</a></li>
-            <li><a href="">Life in the Universe</a></li>
-            <li><a href="">Origin of Life</a></li>
-            <li><a href="">Exploring the Moon</a></li>
+            <?php
+            
+            foreach ($prodigyDB->getLessonList($row2['classID']) as $row3){
+            	echo("<li><a href='index.php?module=viewlesson&lessonid=".$row3['lessonID']."'>".$row3['lessonNum'].") ".$row3['name']."</a></li>");
+            }
+            
+            ?>
         </ul>
     </div>
     
-    <div class="container module">
-        <h4 class="header">Quizzes</h4>
-        <ul class="list">
-            <li><a href="">On Astrobiology</a></li>
-            <li><a href="">On Life in the Universe</a></li>
-            <li><a href="">On Origin of Life</a></li>
-            <li><a href="">On Exploring the Moon</a></li>
-        </ul>
-    </div>
+    
 </div>
 

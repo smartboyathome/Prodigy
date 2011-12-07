@@ -5,7 +5,7 @@
     
         <div class="oneColumn">
             <section class="classContainer">
-                <div class="header">Register</div>
+                <div class="header" style="margin-bottom: 15px;">Register</div>
 		    <div class="description">
 		<?
 			/**
@@ -50,19 +50,28 @@
 			if($form->num_errors > 0){
 			   echo "<td><font size=\"2\" color=\"#ff0000\">".$form->num_errors." error(s) found</font></td>";
 			}
-			?><div align="center">
+			?>
 			<form action="process.php" method="POST">
-			<table align="center" border="0" cellspacing="0" cellpadding="3">
-			<tr><td><b>Username:</b></td><td><input type="text" name="user" maxlength="30" class="register" value="<? echo $form->value("user"); ?>"></td><td><? echo $form->error("user"); ?></td></tr>
-			<tr><td><b>Password:</b></td><td><input type="password" name="pass" maxlength="30"class="register" value="<? echo $form->value("pass"); ?>"></td><td><? echo $form->error("pass"); ?></td></tr>
-			<tr><td><b>Email:</b></td><td><input type="text" name="email" maxlength="50" class="register" value="<? echo $form->value("email"); ?>"></td><td><? echo $form->error("email"); ?></td></tr>
+			<table class="editAccount" border="0" cellspacing="0" cellpadding="3">
+			<tr>
+			    <td>Username:</td>
+			    <td><input type="text" name="user" maxlength="30" value="<? echo $form->value("user"); ?>"></td><td><? echo $form->error("user"); ?></td>
+			</tr>
+			<tr>
+			    <td>Password:</td>
+			    <td><input type="password" name="pass" maxlength="30" value="<? echo $form->value("pass"); ?>"></td><td><? echo $form->error("pass"); ?></td>
+			</tr>
+			<tr>
+			    <td>Email:</td>
+			    <td><input type="text" name="email" maxlength="50" value="<? echo $form->value("email"); ?>"></td>
+			    <td><? echo $form->error("email"); ?></td>
+			</tr>
 			<tr><td colspan="2" align="center">
 			<input type="hidden" name="subjoin" value="1">
-			<input type="submit" class="button" value="Create Account" style="width: 148px; height: 31px; padding-top: 0px; padding-bottom: 2px; margin-top: 15px;" ></td></tr>
+			<input type="submit" class="button" value="Create Account" style="width: 148px; height: 31px; padding-top: 0px; padding-bottom: 2px; margin-top: 15px; margin-left: 205px;" ></td></tr>
 		    
 			</table>
 			</form>
-			</div>
 			<?
 			}
 			?>
