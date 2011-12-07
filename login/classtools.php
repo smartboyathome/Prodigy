@@ -35,8 +35,8 @@ if(!empty($_GET['classid']))
             }
             ?>
             </div>
-		    Class Name: <input type="text" name="name" style="border-radius: 2px;" value="<?php if(!empty($name)) echo $name; ?>" /> <br> <br>
-		    Description: <input type="text" size="80" name="description" style="border-radius: 2px;" value="<?php if(!empty($desc)) echo $desc; ?>" />
+		    Class Name: <input type="text" name="name" size="60"style="border-radius: 2px;" value="<?php if(!empty($name)) echo $name; ?>" /> <br> <br>
+		    Description: <input type="text" size="100" name="description" style="border-radius: 2px;" value="<?php if(!empty($desc)) echo $desc; ?>" />
 		    <br> 
 
             <?php
@@ -63,13 +63,17 @@ else
         $db = new mysqlDAL;
         if(isset($_POST['ClassId']))
         {
-            echo("EDITING!");
             $db->editClass($_POST['ClassId'], $_POST['name'], $_POST['description']);
+
+            $cID = $_POST['ClassId'];
+
+            echo "<meta http-equiv='refresh' content='0;url=index.php?module=viewclass&classid=".$cID."'>"; 
         }
         else
         {
-            echo("CREATING!!");
             $db->addClass($_POST['name'], $_POST['description']);
+
+            echo "<meta http-equiv='refresh' content='0;url=index.php?module=viewcatalog'>"; 
         }
     }
 }

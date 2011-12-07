@@ -42,7 +42,7 @@ foreach ($prodigyDB->getClass($classID) as $row){
             }
             
             ?> </div>
-		    Lesson Name: <input type="text" name="name" style="border-radius: 2px;" value="<?php 
+		    Lesson Name: <input type="text" size="35" name="name" style="border-radius: 2px;" value="<?php 
 
             if(!empty($name)) echo $name; ?>" /> <br>
             Lesson Number: <input type="text" size="3" name="number" style="border-radius: 2px;" value="<?php if(!empty($num)) echo $num; ?>" /><br />
@@ -80,13 +80,21 @@ else
         if(isset($_POST['LessonId']))
         {
             $db->editLesson($_POST['LessonId'], $_POST['number'], $_POST['name'], $_POST['content']);
+
+            $lID = $_POST['LessonId'];
+
+            echo "<meta http-equiv='refresh' content='0;url=index.php?module=viewlesson&lessonid=".$lID."'>";
+
         }
         else if(isset($_POST['ClassId']))
         {
             $db->addLesson($_POST['ClassId'], $_POST['number'], $_POST['name'], $_POST['content']);
+
+            $cID = $_POST['ClassId'];
+
+            echo "<meta http-equiv='refresh' content='0;url=index.php?module=viewclass&classid=".$cID."'>"; 
         }
 
-        header("Location: index.php");
     }
 }
 ?>
