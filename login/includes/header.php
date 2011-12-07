@@ -15,7 +15,7 @@
     
     <header id="header" class="frame">
         <div id="logo">
-            <a href="/"><img src="images/ProdigyLogo.png"></a></h1>
+            <a href="index.php"><img src="images/ProdigyLogo.png"></a></h1>
         </div>
     </header>
     

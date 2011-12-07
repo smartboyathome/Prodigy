@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.3.9.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 04, 2011 at 05:30 AM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Host: localhost
+-- Generation Time: Dec 06, 2011 at 06:11 PM
+-- Server version: 5.5.9
+-- PHP Version: 5.3.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -23,11 +22,66 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `active_guests`
+--
+
+DROP TABLE IF EXISTS `active_guests`;
+CREATE TABLE `active_guests` (
+  `ip` varchar(15) NOT NULL,
+  `timestamp` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`ip`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `active_guests`
+--
+
+INSERT INTO `active_guests` VALUES('127.0.0.1', 1323223858);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `active_users`
+--
+
+DROP TABLE IF EXISTS `active_users`;
+CREATE TABLE `active_users` (
+  `username` varchar(30) NOT NULL,
+  `timestamp` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `active_users`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banned_users`
+--
+
+DROP TABLE IF EXISTS `banned_users`;
+CREATE TABLE `banned_users` (
+  `username` varchar(30) NOT NULL,
+  `timestamp` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `banned_users`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `class`
 --
 
 DROP TABLE IF EXISTS `class`;
-CREATE TABLE IF NOT EXISTS `class` (
+CREATE TABLE `class` (
   `classID` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `description` text NOT NULL,
@@ -41,9 +95,8 @@ CREATE TABLE IF NOT EXISTS `class` (
 -- Dumping data for table `class`
 --
 
-INSERT INTO `class` (`classID`, `name`, `description`, `createdDate`, `lastModDate`, `enrolledCnt`) VALUES
-(1, 'An Introduction to PHP and MySQL', 'After taking this class, you should have a basic understanding of the PHP scripting language, and MySQL database structure.', 1320719559, 1320720659, 51),
-(2, 'Surviving the CSS Program', 'Tips and tricks about surviving the intense coursework present throughout UW Bothell''s Computing and Software Systems program.', 0, 2147483647, 12345);
+INSERT INTO `class` VALUES(1, 'An Introduction to PHP and MySQL', 'After taking this class, you should have a basic understanding of the PHP scripting language, and MySQL database structure.', 1320719559, 1320720659, 51);
+INSERT INTO `class` VALUES(2, 'Surviving the CSS Program', 'Tips and tricks about surviving the intense coursework present throughout UW Bothell''s Computing and Software Systems program.', 0, 2147483647, 12345);
 
 -- --------------------------------------------------------
 
@@ -52,10 +105,15 @@ INSERT INTO `class` (`classID`, `name`, `description`, `createdDate`, `lastModDa
 --
 
 DROP TABLE IF EXISTS `enrollment`;
-CREATE TABLE IF NOT EXISTS `enrollment` (
+CREATE TABLE `enrollment` (
   `username` varchar(80) NOT NULL,
   `classid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `enrollment`
+--
+
 
 -- --------------------------------------------------------
 
@@ -64,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `enrollment` (
 --
 
 DROP TABLE IF EXISTS `lesson`;
-CREATE TABLE IF NOT EXISTS `lesson` (
+CREATE TABLE `lesson` (
   `lessonID` int(11) NOT NULL AUTO_INCREMENT,
   `classID` int(11) NOT NULL,
   `lessonNum` int(11) NOT NULL,
@@ -78,54 +136,8 @@ CREATE TABLE IF NOT EXISTS `lesson` (
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`lessonID`, `classID`, `lessonNum`, `name`, `description`, `content`) VALUES
-(1, 1, 1, 'What is PHP?', 'Explains what PHP is and how it can be useful to you.', ''),
-(2, 1, 2, 'Basic syntax', 'Introduces you to the basic syntax of the PHP language.', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `quizzes`
---
-
-DROP TABLE IF EXISTS `quizzes`;
-CREATE TABLE IF NOT EXISTS `quizzes` (
-  `quizID` int(11) NOT NULL AUTO_INCREMENT,
-  `classID` int(11) NOT NULL,
-  `quizNum` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `avgScore` int(11) NOT NULL,
-  PRIMARY KEY (`quizID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `quiz_answers`
---
-
-DROP TABLE IF EXISTS `quiz_answers`;
-CREATE TABLE IF NOT EXISTS `quiz_answers` (
-  `questionID` int(11) NOT NULL,
-  `answer` text NOT NULL,
-  `correct` int(11) NOT NULL,
-  KEY `questionID` (`questionID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `quiz_questions`
---
-
-DROP TABLE IF EXISTS `quiz_questions`;
-CREATE TABLE IF NOT EXISTS `quiz_questions` (
-  `questionID` int(11) NOT NULL AUTO_INCREMENT,
-  `quizID` int(11) NOT NULL,
-  `questionNum` int(11) NOT NULL,
-  `question` text NOT NULL,
-  PRIMARY KEY (`questionID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+INSERT INTO `lesson` VALUES(1, 1, 1, 'What is PHP?', 'Explains what PHP is and how it can be useful to you.', '');
+INSERT INTO `lesson` VALUES(2, 1, 2, 'Basic syntax', 'Introduces you to the basic syntax of the PHP language.', '');
 
 -- --------------------------------------------------------
 
@@ -134,19 +146,18 @@ CREATE TABLE IF NOT EXISTS `quiz_questions` (
 --
 
 DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `username` varchar(80) NOT NULL,
-  `password` varchar(160) NOT NULL,
-  `email` text NOT NULL
+CREATE TABLE `users` (
+  `username` varchar(30) NOT NULL,
+  `password` varchar(32) DEFAULT NULL,
+  `userid` varchar(32) DEFAULT NULL,
+  `userlevel` tinyint(1) unsigned NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `timestamp` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `password`, `email`) VALUES
-('smartboyathome', '$1$s4..Fi5.$3lpdNp2YBwZ1wZZu1YExL0', 'smartboy@uw.edu');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO `users` VALUES('PicanteGamer', '60a28473311d0e717da508a2affef51b', '0', 1, 'picantegamer@gmail.com', 1323223852);
