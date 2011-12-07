@@ -294,6 +294,7 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
+
             $dbh->exec("UPDATE lesson SET name='$lname', lessonNum='$lessonNum', content='$lcont' WHERE lessonID='$lid'");
 
             $dbh = NULL;

@@ -109,7 +109,7 @@ else
 
             $cID = $_POST['ClassId'];
 
-            echo "<meta http-equiv='refresh' content='0;url=index.php?module=viewclass&classid=".$cID."'>"; 
+            //echo "<meta http-equiv='refresh' content='0;url=index.php?module=viewclass&classid=".$cID."'>"; 
         }
 
     }
