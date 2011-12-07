@@ -30,7 +30,7 @@ if(!empty($_GET['classid']))
                 if (empty($_GET['classid'])){
                     echo("<h3 class='header'>Create Your Class</h3>");
                 }else{
-                    echo("<h3 class+'header'>Editing ".$name."</h3>");
+                    echo("<h3 class='header'>Editing ".$name."</h3>");
                 }
                 ?>
                 
