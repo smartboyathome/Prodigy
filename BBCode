@@ -1,0 +1,82 @@
+<?php
+
+functon convertFromHTML ($textInput) {
+
+	$bbTags = array (
+		"<", ">",					//Alligators
+		"[list]", "[*]", "[/list]", //List 
+		"[img]", "[/img]", 			//Image
+		"[b]", "[/b]", 				//Bold
+		"[u]", "[/u]", 				//Underline
+		"[i]", "[/i]",				//Italic
+		'[color="', "[/color]",		//Color
+		"[size=\"", "[/size]",		//Size
+		'[url="', "[/url]",			//URL
+		"[mail=\"", "[/mail]",		//Email
+		"[code]", "[/code]",		//Code
+		"[quote]", "[/quote]",		//Quote
+		'"]')
+	);
+	
+	$htmlTags = array (
+		"&lt;", "&gt;",
+		"<ul>", "<li>", "</ul>", 	
+		"<img src=\"", "\">", 		
+		"<b>", "</b>", 
+		"<u>", "</u>", 
+		"<i>", "</i>",
+		"<span style=\"color:", "</span>",
+		"<span style=\"font-size:", "</span>",
+		'<a href="', "</a>",
+		"<a href=\"mailto:", "</a>",
+		"<code>", "</code>",
+		"<table width=100% bgcolor=lightgray><tr><td bgcolor=white>", "</td></tr></table>",
+		'">'
+	);
+	
+	$convertedText = str_replace($hmlTags, $bbTags, $text); 	//Switches the tags.
+	$convertedText = nl2br($convertedText) 						//Adds the new Lines.
+	return $convertedText;										//Returns the converted text.
+}
+
+function convertFromBBCode ($textInput) {
+
+	$bbTags = array (
+		"<", ">",					//Alligators
+		"[list]", "[*]", "[/list]", //List 
+		"[img]", "[/img]", 			//Image
+		"[b]", "[/b]", 				//Bold
+		"[u]", "[/u]", 				//Underline
+		"[i]", "[/i]",				//Italic
+		'[color="', "[/color]",		//Color
+		"[size=\"", "[/size]",		//Size
+		'[url="', "[/url]",			//URL
+		"[mail=\"", "[/mail]",		//Email
+		"[code]", "[/code]",		//Code
+		"[quote]", "[/quote]",		//Quote
+		'"]')
+	);
+	
+	$htmlTags = array (
+		"&lt;", "&gt;",
+		"<ul>", "<li>", "</ul>", 	
+		"<img src=\"", "\">", 		
+		"<b>", "</b>", 
+		"<u>", "</u>", 
+		"<i>", "</i>",
+		"<span style=\"color:", "</span>",
+		"<span style=\"font-size:", "</span>",
+		'<a href="', "</a>",
+		"<a href=\"mailto:", "</a>",
+		"<code>", "</code>",
+		"<table width=100% bgcolor=lightgray><tr><td bgcolor=white>", "</td></tr></table>",
+		'">'
+	);
+	
+	$text = strip_tags($text); 									// Strips html tags.
+	$text = mysql_real_escape_string($text); 					// Prevents MySQL injection
+	$convertedText = str_replace($bbTags, $hmlTags, $text); 	//Switches the tags.
+	$convertedText = nl2br($convertedText) 						//Adds the new Lines.
+	return $convertedText;										//Returns the converted text.
+}
+?>
