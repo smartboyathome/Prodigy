@@ -158,27 +158,6 @@ class mysqlDAL{
         }
 	}
     
-
-    //************************************************************************************
-    //numClassesUserEnrolledIn
-    //The number of classes the specified user is enrolled in
-    //
-    public function getEnrolledList($userID)
-    {
-        global $db_host, $db_name, $db_user, $db_pass;
-        try {
-            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-
-            $sql = "SELECT * FROM enrollment WHERE userID='$userID'";
-
-            
-            return dbh->query($sql);
-            
-        }catch(PDOException $e){
-            echo $e->getMessage();
-        }
-    }
-
     //************************************************************************************
     //unenrollUserInClass
     //Unenrolls the user in the specified class
