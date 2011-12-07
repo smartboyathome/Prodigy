@@ -1,12 +1,16 @@
 <!DOCTYPE HTML>
 
 <?php
+
 include_once 'conf.php';
 include_once 'dal/mysql.php';
 if(!isset($_POST['Submit']))
 {
 include_once 'includes/header.php';
 $name = "";
+
+if (!$session->logged_in)
+die("Not logged in.");
 
 $prodigyDB = new mysqlDAL;
 if (!empty($_GET["lessonid"])){

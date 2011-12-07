@@ -6,6 +6,10 @@ include_once 'dal/mysql.php';
 if(!isset($_POST['Submit']))
 {
 include_once 'includes/header.php';
+
+if (!$session->logged_in)
+die("Not logged in.");
+
 $name = "";
 $desc = "";
 if(!empty($_GET['classid'])) 
