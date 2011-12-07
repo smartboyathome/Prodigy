@@ -234,7 +234,7 @@ class mysqlDAL{
 
             $createdDate = time();
 
-            $dbh->exec("UPDATE class SET name=$cname, description=$cdesc, lastModDate=$createdDate WHERE classID='$cid'");
+            $dbh->exec("UPDATE class SET name='$cname', description='$cdesc', lastModDate='$createdDate' WHERE classID='$cid'");
 
             $dbh = NULL;
         }catch(PDOException $e){
@@ -248,16 +248,14 @@ class mysqlDAL{
     //addLesson
     //adds a new lesson to the database
     //
-    public function addLesson($classID, $lessonNum, $name, $description, $content){
+    public function addLesson($classID, $lessonNum, $name, $content){
         global $db_host, $db_name, $db_user, $db_pass;
 
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $createdDate = time();
-
-            $dbh->exec("INSERT INTO lesson(classID, lessonNum, name, description, content)
-                VALUES ('$classID', '$lessonNum', $name', '$description', '$content')");
+            $dbh->exec("INSERT INTO lesson(classID, lessonNum, name, content)
+                VALUES ('$classID', '$lessonNum', '$name', '$content')");
 
             $dbh = NULL;
         }catch(PDOException $e){
@@ -290,15 +288,13 @@ class mysqlDAL{
     //editLesson
     //edit a lesson from the database
     //
-    public function editLesson($lid, $lname, $lcont){
+    public function editLesson($lid, $lessonNum, $lname, $lcont){
         global $db_host, $db_name, $db_user, $db_pass;
 
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $createdDate = time();
-
-            $dbh->exec("UPDATE lesson SET name=$lname, content=$lcont WHERE lessonID='$lid'");
+            $dbh->exec("UPDATE lesson SET name='$lname', lessonNum='$lessonNum', content='$lcont' WHERE lessonID='$lid'");
 
             $dbh = NULL;
         }catch(PDOException $e){
@@ -338,7 +334,7 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $sql = "SELECT * FROM class ORDER BY enrolledCnt DESC LIMIT 3";
+            $sql = "SELECT * FROM class ORDER BY createdDate DESC LIMIT 3";
 
             return $dbh->query($sql);
 
@@ -420,9 +416,30 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $sql = "SELECT * FROM lesson WHERE classID='$classID'";
+            $sql = "SELECT * FROM class WHERE classID='$classID'";
 
             return $dbh->query($sql)->columnCount() != 0;
+
+            $dbh = NULL;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+    
+    //************************************************************************************
+    //lessonExists
+    //Checks whether the specified lesson number exists
+    //
+    public function lessonExists($classId, $lessonNum)
+    {
+        global $db_host, $db_name, $db_user, $db_pass;
+
+        try {
+            $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+            $sql = "SELECT * FROM lesson WHERE classID=$classID AND lessonNum=$lessonNum";
+
+            return $dbh->query($sql)->rowCount() != 0;
 
             $dbh = NULL;
         }catch(PDOException $e){
