@@ -23,13 +23,8 @@ foreach ($prodigyDB->getClass($_GET["classid"]) as $row){
                 </div>
                 
                 <div class='fr' style='margin-top:15px;'>");
-		    if ($prodigyDB->userisEnrolledInClass($session->username, $_GET["classid"])){
-		      echo("<a class='button' href='unenroll.php?ClassId=".$_GET['classid']."'>Unenroll</a>");
-		    }
-		    else{
-		      echo("<a class='button' href='enroll.php?ClassId=".$_GET['classid']."'>Enroll Now</a>");
-		    }
-               echo(" </div>
+
+               echo("
             </div>");
 }
 
@@ -53,16 +48,17 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
 
 <div id="secondaryColumn">
     <div class="container module">
-        <h4 class="header">What You'll Learn</h4>
+
+        <?php if($session->logged_in){ ?>
+        <h4 class="header">Tools</h4>
         <ul class="list">
-            <?php
-            
-            foreach ($prodigyDB->getLessonList($row2['classID']) as $row3){
-            	echo("<li><a href='index.php?module=viewlesson&lessonid=".$row3['lessonID']."'>".$row3['lessonNum'].") ".$row3['name']."</a></li>");
-            }
-            
-            ?>
+        <a class='button' href='classtools.php?classid=<?php echo $_GET['classid']; ?>>Edit Class</a>
         </ul>
+        <?php }else{ ?>
+        <h4 class="header">Tools</h4>
+        You must be logged in to be able to contribute changes to this class.  Login or register today!
+
+        <?php } ?>
     </div>
     
     

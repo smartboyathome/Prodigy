@@ -12,7 +12,7 @@
 
     <section class='classDescription' data-link='index.php?module=viewclass&classid=".$row['classID']."'>
          <h3 class='title'>".$row['name']."</h3>
-        <div class='smallPrint'><span>".$row['enrolledCnt']." Users Enrolled</span> | Created on ");
+        <div class='smallPrint'>Created on ");
     
     echo date('F jS Y \a\t g:i A', $row[createdDate]);
 

@@ -72,7 +72,6 @@ include_once 'includes/footer.php';
 }
 else
 {
-    //    public function addLesson($classID, $lessonNum, $name, $content){
 
     if(!empty($_POST['name']) && !empty($_POST['number']) && !empty($_POST['content']))
     {

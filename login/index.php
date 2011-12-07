@@ -20,6 +20,8 @@
                 include 'includes/viewlesson.php';
             }elseif ($mod == 'viewcatalog'){
                 include 'includes/viewcatalog.php';
+            }elseif ($mod == 'gettingstarted'){
+                include 'includes/gettingstarted.php';
             }else{
                 include 'includes/home.php';
             }

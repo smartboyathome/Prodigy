@@ -14,22 +14,15 @@ foreach ($prodigyDB->getClass($_GET["classid"]) as $row){
 
  echo("<div class='module flc'>
                 <h3 class='header'>".$row['name']."</h3>
-                <div class='smallPrint' style='margin-bottom: 10px;'><span>".$row['enrolledCnt']." Users Enrolled</span> | Created on ");
+                <div class='smallPrint' style='margin-bottom: 10px;'><span>Created on ");
     
 	echo date('F jS Y \a\t g:i A', $row[createdDate]);
 
-    echo("		</div>
+    echo("</span></div>
                 <div class='description'>".$row['description']."
                 </div>
-                
-                <div class='fr' style='margin-top:15px;'>");
-		    if ($prodigyDB->userisEnrolledInClass($session->username, $_GET["classid"])){
-		      echo("<a class='button' href='unenroll.php?ClassId=".$_GET['classid']."'>Unenroll</a>");
-		    }
-		    else{
-		      echo("<a class='button' href='enroll.php?ClassId=".$_GET['classid']."'>Enroll Now</a>");
-		    }
-               echo(" </div>
+
+
             </div>");
 }
 
@@ -51,18 +44,21 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
 </div>
 </div>
 
+
 <div id="secondaryColumn">
     <div class="container module">
-        <h4 class="header">What You'll Learn</h4>
+
+        <?php if($session->logged_in){ ?>
+        <h4 class="header">Tools</h4>
         <ul class="list">
-            <?php
-            
-            foreach ($prodigyDB->getLessonList($row2['classID']) as $row3){
-            	echo("<li><a href='index.php?module=viewlesson&lessonid=".$row3['lessonID']."'>".$row3['lessonNum'].") ".$row3['name']."</a></li>");
-            }
-            
-            ?>
+        <br/>
+        <a class='button' href="classtools.php?classid=<?php echo $row['classID']; ?>">Edit class</a>         <a class='button' href="lessontools.php?classid=<?php echo $_GET['classid']; ?>">Add new lesson</a>
         </ul>
+        <?php }else{ ?>
+        <h4 class="header">Tools</h4>
+        You must be logged in to be able to contribute changes to this class.
+
+        <?php } ?>
     </div>
     
     

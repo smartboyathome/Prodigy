@@ -31,6 +31,11 @@ foreach ($prodigyDB->getLessonList($row2['classID']) as $row3){
 ?>          
             
             </ul>
+            <?php
+            if ($session->logged_in){
+                echo("<br/><a class='button' href='lessontools.php?lessonid=".$_GET["lessonid"]."'>Edit this lesson</a>");
+            }
+            ?>
             </div>
 
         </div>

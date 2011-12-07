@@ -15,7 +15,7 @@
                  
                 if($session->logged_in){
                 ?>
-                    <div class="header">My Account</div>
+                    <div class="module"><h3 class='header' style='margin-bottom: 0;'>My Account</h3></div>
                     <div class="login">
                 <?
                    echo "Welcome <b>$session->username</b>, you are logged in. <br><br>"
@@ -25,7 +25,6 @@
                       echo "[<a href=\"admin.php\">Admin Center</a>] &nbsp;&nbsp;";
                    }
                    echo "[<a href=\"process.php\">Logout</a>]";
-		   echo "<br><br><div class=\"header\"> Enrolled Classes</div>";
                 }
                 else{
                 ?>

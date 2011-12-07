@@ -84,6 +84,9 @@ body {
 
 #mainColumn { width: 595px; height: auto; background: #FFF; padding: 20px; float: left; border: 1px solid #DDD; margin-right: 20px; }	
 	#mainColumn .classDescription { padding: 20px 10px; border-bottom: 1px dotted #CCC;}
+
+	#fullColumn { width: 915px; height: auto; background: #FFF; padding: 20px; float: left; border: 1px solid #DDD; margin-right: 20px; }	
+	#fullColumn .classDescription { padding: 20px 10px; border-bottom: 1px dotted #CCC;}
 	
 #secondaryColumn { width: 300px; float: left;  }
 	#secondaryColumn .container { width: 260px; padding: 20px; background: #FFF; border: 1px solid #DDD;}
