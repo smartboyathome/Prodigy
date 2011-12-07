@@ -35,7 +35,7 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
 
     $preview = showBrief($row2['content'], 75);
 
-	echo("          <article class='classDescription'>
+	echo("          <article class='classDescription' data-link='index.php?module=viewlesson&lessonid=".$row2['lessonID']."'>
                     <h4 class='title' style='margin-bottom: 15px;'><a href='index.php?module=viewlesson&lessonid=".$row2['lessonID']."'>".$row2['lessonNum'].") ".$row2['name']."</a></h4>
                     <div class='description'>".$preview."...</div>
                     </article>");

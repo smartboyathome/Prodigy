@@ -7,6 +7,13 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta name="description" content="" />
     <script type="text/javascript" src="css/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".classDescription").on("click", function() {
+                document.location.href = $(this).data("link");
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -22,15 +29,16 @@
     <!--
     <?php if($session->logged_in) {?>
     <div class="welcomeMessage">
-        <? echo "Welcome, <b>$session->username</b>" ?>
+        <? echo "Welcome, <b>$session->username</b>"; ?>
     </div>
-    <? } ?>
+    <?php } ?>
     -->
     
     <nav id="nav">
     	<ul class="list">
     	    <li><a href="index.php">Home</a></li>
     	    <li><a href="index.php?module=viewcatalog">Browse</a></li>
+    	    <li><a href="">My Classes</a></li>
     	    <?php include_once 'login2.php'; ?>
 	    
 	    
