@@ -8,6 +8,6 @@
         $db->unenrollUserInClass($session->username, $_POST['ClassId']);
         $referrer = $_SERVER['HTTP_REFERER'];
         if(!empty($referrer)) header("Location: $referrer");
-        else header("Location: /");
+        else header("Location: index.php");
     }
 ?>

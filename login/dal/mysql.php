@@ -87,13 +87,15 @@ class mysqlDAL{
 	//
 	public function enrollUserInClass($username, $classid)
 	{
+	echo("BLAH!");
         global $db_host, $db_name, $db_user, $db_pass;
         try {
             
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-            
+            echo("OKBAI");
             if(!$this->userIsEnrolledInClass($username, $classid))
             {
+		echo("OHAI");
                 $sql = "INSERT INTO enrollment(username, classid) VALUES('$username', $classid)";
                 $result = $dbh->exec($sql);
             }
@@ -117,8 +119,8 @@ class mysqlDAL{
 
             $sql = "SELECT * FROM enrollment WHERE username='$username' AND classid=$classid";
             $result = $dbh->query($sql);
-            
-            return $result->columnCount() != 0 && $this->userExists($username) && $this->classExists($classid);
+
+            return $result->rowCount() != 0 && $this->userExists($username) && $this->classExists($classid);
         }catch(PDOException $e){
             echo $e->getMessage();
         }
