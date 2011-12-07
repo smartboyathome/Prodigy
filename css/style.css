@@ -26,6 +26,7 @@ ol, ul {
 /*----------------------------------*/
 
 a:link, a:visited, a:hover { color: #4DA400; text-decoration: none; }
+a.button { color: #FFF; }
 
 /* Float Container */
 .flc { clear:both; }
@@ -39,6 +40,7 @@ html > body .flc { height: auto; max-height: 120000px; }
 
 body { 
 	font: 14px/18px Helvetica, Arial, "Helvetica Neue", sans-serif;
+	color: #555;
 	background: #FFFFFF; 
 }
 
@@ -57,9 +59,12 @@ body {
 
 .module { margin-bottom: 20px; }
 
-.register{ border-radius: 5px 5px 5px 5px;
+.register{border-radius: 5px 5px 5px 5px;
     padding: 5px 5px;
+    margin: 5px;
     width: 200px;}
+
+
 
 #nav ul { margin-bottom: 20px; width: 980px; }
 	#nav .list { height: 35px; border: 1px solid #1E1E1E; background: url('../images/nav_bg.png'); }
@@ -88,13 +93,26 @@ body {
 	
 .oneColumn {  width: 915px; height: auto; background: #FFF; padding: 20px; float: left; border: 1px solid #DDD; overflow: hidden;}
 		.oneColumn .header { width: 920px; }
-		.oneColumn .classDescription { width: 430px; height: 125px; float: left; margin: 0 20px 0 0; }
+		.oneColumn .classDescription { width: 430px; height: 125px; float: left; margin: 0 20px 0 0;}
 		
-.twoColumn { width: 442px; height: auto; float: left; }
+.loginContainer { width: auto; height: auto; float: left; color: #555; }
+	.loginContainer .header { font-size: 24px; width: auto; border: none; margin-bottom: 10px; }
+	.loginContainer .info { margin-bottom: 10px; font-size: 12px;}
 	
-.login { }
-	.twoColumn .header { font-size: 24px; width: auto; border: none; }
-	.twoColumn .login .info { margin-bottom: 10px; }
+.login {}
+	.login .loginInfo { line-height: 36px; }
+	.login .form { margin-left: 50px; }
+	.login .smallPrint { font-size: 12px; }
+	
+.error { color: #F00; font-size: 11px; display: inline;}
+
+.welcomeMessage { text-align: right; }
+
+.userData { width: 100px; display: inline; }
+
+.editAccount td { width: 200px; line-height: 36px; }
+.editAccount td:first-child { width: 150px; }
+.editAccount td input { width: 200px; }
 		
 .classDescription { border-bottom: 1px dotted #DDD; padding: 20px 10px; }
 	.classDescription:hover { cursor: pointer; background: #F0F0F0; }

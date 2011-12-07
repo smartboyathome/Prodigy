@@ -14,7 +14,7 @@
         
         <ul class="list">
             <li class="title">Account &#8212;</li>
-            <li><a href="/">Profile</a></li>
+            <li><a href="account.php">Profile</a></li>
             <li><a href="index.php?module=viewcatalog">Classes</a></li>
         </ul>
         
@@ -27,4 +27,5 @@
 </div>
 
 </body>
+
 </html>
