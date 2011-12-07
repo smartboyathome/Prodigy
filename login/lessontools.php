@@ -33,43 +33,56 @@ foreach ($prodigyDB->getClass($classID) as $row){
 ?>
 
     <div id="wrapper" class="frame">
-	    <div class="oneColumn">
-	    <div align="center" class="classpage" style="height: auto;">
-		<form name="input" action="lessontools.php" method="post">
-		    <div style="font-size: 20px; padding: 15px; font-weight: bold; color: #4DA400;">
+        <div class="oneColumn">
+        <div class="classpage">
+        <form name="input" action="lessontools.php" method="post">
+                <?php
+                if ($mode == "new"){
+                    echo("<h3 class='header'>Add a Lesson to ".$classname."</h3>");
+                } elseif ($mode == "edit"){
+                    echo("<h3 class='header'>Editing the lesson ".$name." from ".$classname."</h3>");
+                }
+                ?>
+                
+                <div class="module" style="margin-top: 15px">
+                <table class="tableCreateClass">
+                    <tr>
+                        <td>Lesson Name:</td>
+                        <td> <input type="text" size="35" name="name" value="<?php 
 
-            <?php
-            if ($mode == "new"){
-                echo("Creating a new lesson for the ".$classname." class");
-            }elseif ($mode == "edit"){
-                echo("Editing the lesson ".$name." from the ".$classname." class");
-            }
-            
-            ?> </div>
-		    Lesson Name: <input type="text" size="35" name="name" style="border-radius: 2px;" value="<?php 
-
-            if(!empty($name)) echo $name; ?>" /> <br>
-            Lesson Number: <input type="text" size="3" name="number" style="border-radius: 2px;" value="<?php if(!empty($num)) echo $num; ?>" /><br />
-
-             <br>
-            Content:<br />
-            <textarea name="content" rows='20' cols='70'><?php if(!empty($cont)) echo $cont; ?></textarea>
-		    <br> 
-
-            <?php
-            if ($mode =="edit"){
-                echo("<input type='submit' value='Edit Lesson' style='margin: 5px;' name='Submit'/>");
-            }elseif ($mode=="new"){
-                echo("<input type='submit' value='Create Lesson' style='margin: 5px;' name='Submit'/>");
-            }
-            ?>
-            <?php if(!empty($_GET['lessonid'])) { ?> <input type="hidden" name="LessonId" value="<?php echo $_GET['lessonid']; ?>" /> <?php }
-            elseif(!empty($_GET['classid'])) { ?> <input type="hidden" name="ClassId" value="<?php echo $_GET['classid']; ?>" /> <?php } ?>
-		</form>
-	    </div>
-	    </div>
-	
-	
+                        if(!empty($name)) echo $name; ?>" /></td>
+                    <tr>
+                    <tr>
+                        <td>Lesson Number:</td>
+                        <td><input type="text" size="3" name="number" value="<?php if(!empty($num)) echo $num; ?>" /></td>
+                    </tr>
+                    <tr>
+                        <td><p style="margin-top: -75px;">Content:</p></td>
+                        <td>
+                            <textarea name="content" rows="10" cols="50"><?php if(!empty($cont)) echo $cont; ?></textarea>
+                        </td>
+                            
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <?php
+                            if ($mode =="edit"){
+                                echo("<input type='submit' class='button' value='Edit Lesson' style='margin: 5px;' name='Submit'/>");
+                            }elseif ($mode=="new"){
+                                echo("<input type='submit' class='button' value='Create Lesson' style='margin: 5px;' name='Submit'/>");
+                            }
+                            ?>
+                            
+                            <?php if(!empty($_GET['lessonid'])) { ?> <input type="hidden" name="LessonId" value="<?php echo $_GET['lessonid']; ?>" /> <?php }
+                            elseif(!empty($_GET['classid'])) { ?> <input type="hidden" name="ClassId" value="<?php echo $_GET['classid']; ?>" /> <?php } ?>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        </div>
+    
+        </div>
     </div> <!--#wrapper -->
 <?php
 include_once 'includes/footer.php';
