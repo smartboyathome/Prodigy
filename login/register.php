@@ -5,7 +5,7 @@
     
         <div class="oneColumn">
             <section class="classContainer">
-                <div class="header">Register</div>
+                <div class="header" style="margin-bottom: 15px;">Register</div>
 		    <div class="description">
 		<?
 			/**
