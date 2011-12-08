@@ -49,13 +49,13 @@ foreach ($prodigyDB->getLessonList($row['classID']) as $row2){
     <div class="container module">
 
         <?php if($session->logged_in){ ?>
-        <h4 class="header">Tools</h4>
+        <h4 class="header">Creation Tools</h4>
         <ul class="list">
         <br/>
         <a class='button' href="classtools.php?classid=<?php echo $row['classID']; ?>">Edit class</a>         <a class='button' href="lessontools.php?classid=<?php echo $_GET['classid']; ?>">Add new lesson</a>
         </ul>
         <?php }else{ ?>
-        <h4 class="header">Tools</h4>
+        <h4 class="header">Creation Tools</h4><br/>
         You must be logged in to be able to contribute changes to this class.
 
         <?php } ?>
