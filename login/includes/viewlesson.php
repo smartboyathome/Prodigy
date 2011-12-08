@@ -6,6 +6,7 @@ echo("<div id='mainColumn'>");
 
 
 foreach ($prodigyDB->getLesson($_GET["lessonid"]) as $row){
+    $classID = $row['classID'];
 
 foreach($prodigyDB->getClass($row['classID']) as $row2){
 	$className = $row2['name'];
@@ -29,11 +30,12 @@ foreach ($prodigyDB->getLessonList($row2['classID']) as $row3){
 	echo("<li><a href='index.php?module=viewlesson&lessonid=".$row3['lessonID']."'>".$row3['lessonNum'].") ".$row3['name']."</a></li>");
 }
 ?>          
+<?php
+            echo("<li><a href='index.php?module=viewclass&classid=".$classID."'><- Back to class page</a></li>
+            </ul>");
             
-            </ul>
-            <?php
             if ($session->logged_in){
-                echo("<br/><a class='button' href='lessontools.php?lessonid=".$_GET["lessonid"]."'>Edit this lesson</a>");
+                echo("<br/><a class='button' href='lessontools.php?lessonid=".$_GET["lessonid"]."'>Edit this lesson</a>         <a class='button' href='lessontools.php?classid=".$classID."'>Add lesson</a>");
             }
             ?>
             </div>

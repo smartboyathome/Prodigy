@@ -29,6 +29,16 @@
         <div id="secondaryColumn">
             <div class="container">
                 <h4 class="header">What is Prodigy?</h4><div class='smallPrint'>
-Welcome to Prodigy, a shared user learning system.  Here you can view classes that users just like you have created.  Once you register and log in, you can also create your own classes for others to view.  Help support Prodigy and it's users, spread the knowledge!<br><br><a href='index.php?module=gettingstarted'>Visit our getting started page to find out more</a></div>
+Welcome to Prodigy, a shared user learning system.  Here you can view classes that users just like you have created.  Once you register and log in, you can also create your own classes for others to view.  Help support Prodigy and it's users, spread the knowledge!<br><br><a href='index.php?module=gettingstarted'>Visit our getting started page to find out more</a>
+
+
+<?php
+
+if ($session->logged_in){
+    echo("<br><br><b>Logged in as ".$session->username."</b>");
+}
+
+?>
+</div>
             </div>
         </div>

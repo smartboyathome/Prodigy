@@ -329,7 +329,7 @@ class mysqlDAL{
         try {
             $dbh = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 
-            $sql = "SELECT * FROM class";
+            $sql = "SELECT * FROM class ORDER BY name ASC";
 
             return $dbh->query($sql);
 
