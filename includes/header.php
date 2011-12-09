@@ -38,7 +38,6 @@
     	<ul class="list">
     	    <li><a href="index.php">Home</a></li>
     	    <li><a href="index.php?module=viewcatalog">Browse</a></li>
-    	    <li><a href="">My Classes</a></li>
     	    <?php include_once 'login2.php'; ?>
 	    
 	    

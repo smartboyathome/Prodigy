@@ -6,7 +6,7 @@
         
         <ul class="list">
             <li class="title">Site Map &#8212;</li>
-            <li><a href="/">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="index.php?module=viewcatalog">Browse</a></li>
         </ul>
         

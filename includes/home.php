@@ -2,7 +2,7 @@
     echo("
     <div id='mainColumn'>            
 
-    <h2 class='header'>Popular Classes</h2>");
+    <h2 class='header'>Recent Classes</h2>");
     
 	$prodigyDB = new mysqlDAL;
 
@@ -12,12 +12,12 @@
 
     <section class='classDescription' data-link='index.php?module=viewclass&classid=".$row['classID']."'>
          <h3 class='title'>".$row['name']."</h3>
-        <div class='smallPrint'>Created on ");
+        <div class='smallPrint'><span>Created on ");
     
     echo date('F jS Y \a\t g:i A', $row[createdDate]);
 
 
-    echo("</div>
+    echo("</span></div>
         <div class='description'>".$row['description']."</div>
         </section>");
     }
@@ -27,16 +27,18 @@
 </div>
 
         <div id="secondaryColumn">
-            <div class="container" style="height: 460px;">
-                <h4 class="header">Subjects</h4>
-                <ul class="list">
-                    <li><a href="">Astronomy</a></li>
-                    <li><a href="">Biology</a></li>
-                    <li><a href="">Business</a></li>
-                    <li><a href="">Chemistry</a></li>
-                    <li><a href="">Computer Science</a></li>
-                    <li><a href="">Economics</a></li>
-                    <li><a href="">Education</a></li>
-                </ul>
+            <div class="container">
+                <h4 class="header">What is Prodigy?</h4><div class='smallPrint'>
+Welcome to Prodigy, a shared user learning system.  Here you can view classes that users just like you have created.  Once you register and log in, you can also create your own classes for others to view.  Help support Prodigy and it's users, spread the knowledge!<br><br><a href='index.php?module=gettingstarted'>Visit our getting started page to find out more</a>
+
+
+<?php
+
+if ($session->logged_in){
+    echo("<br><br><b>Logged in as ".$session->username."</b>");
+}
+
+?>
+</div>
             </div>
         </div>
